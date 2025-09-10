@@ -1,0 +1,47 @@
+# COMMAND LINE:
+# appotool config.dat
+
+# FIRST STEP:
+# create a ramdisk, make it fat32 with specified cluster size.
+# 4KB(0x1000) or 64KB(0x10000) is recommended.
+ramdisk 0x7F0000;
+fat32 cluster 0x2000;
+
+getdbr empty;
+
+# SECOND STEP:
+# you can copy some files from your local disk to the ramdisk.
+# you can also zip a local file with a unzip-engine to a self-unzip file to the ramdisk
+zip "AX3292.bin" FROM "Debug\AX3292-hello-sv6158.bin" "..\..\sdk\AX3292-unzip.bin";
+getdbr;
+# copy Config.dat FROM AX3281-Config.dat;
+trimconf Lcd.dat FROM Lcd.dat;
+trimconf Config.dat FROM Config.dat;
+copy res.bin FROM ".\res.bin";
+
+# THIRD STEP:
+# after zip, some boosts can be copy.
+Boost "..\..\sdk\AX3292-sdrtune.bin" 0x2000;
+
+# FOURTH STEP:
+# before bootdbr, bootfat32 should be copy first.
+BootFat32 "..\..\sdk\AX3292-bootfat32.bin" 3;
+
+# FIFTH STEP:
+# AFTER A SELF-UNZIP FILE IS ZIPPED, you can write the boot-sectors to the ramdisk
+BootDBR "Debug\AX3292-dbr.bin";
+
+# LAST STEP:
+# save the ramdisk to be a image-file to the local disk and quit
+# note that the ramdisk image-file can be opened by WinHex!
+#savedisk "..\..\output\ramdisk.bin" 0x100000;
+savedisk "..\..\output\AX329X.bin";
+quit;
+
+# NOTE:
+# 1. all command should be end with a ';'!
+# 2. string can be quoted with a pair of '"', but a simple string can omit the '"',
+*    for example the simple file name : Config.dat
+# 3. digit number can be decimal or hexadecimal
+# 4. the command is case-insensitive
+

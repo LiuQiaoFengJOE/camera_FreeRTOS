@@ -1,0 +1,27 @@
+#include"uiWin.h"
+
+enum
+{
+	
+	CREATIVETOOLS_MODE_ID=0,
+	CREATIVETOOLS_BATERRY_ID,
+	VCREATIVETOOLS_STR_ID,
+	VCREATIVETOOLS_EXE_MAIN_ID,
+	CREATIVETOOLS_MAX_ID
+};
+
+static widgetCreateInfor CreativeToolsWin[] =
+{
+	createFrameWin(Rx(0),Ry(0), Rw(320),Rh(240),R_COLOR_TRANSFER,WIN_ABS_POS),
+
+	createStringIcon(VCREATIVETOOLS_STR_ID,  Rx(0), Ry(215), Rw(320), Rh(25),R_ID_STR_SET_PLAY,ALIGNMENT_CENTER, R_COLOR_YELLOW,0),
+	//createImageIcon(VIDEO_BATERRY_ID,Rx(280), Ry(208), Rw(32), Rh(32), R_ID_ICON_MTBATTERY3,ALIGNMENT_CENTER),
+#if TP_FUCTION
+	createImageIcon(VCREATIVETOOLS_EXE_MAIN_ID,     Rx(270), Ry(200), Rw(48), Rh(48), R_ID_ICON_MENUBACK,ALIGNMENT_CENTER),
+#endif
+	widgetEnd(),
+};
+
+
+
+

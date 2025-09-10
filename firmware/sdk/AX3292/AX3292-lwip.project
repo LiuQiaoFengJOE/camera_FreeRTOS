@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="AX3292-lwip" Version="10.0.0" InternalType="">
+  <Plugins>
+    <Plugin Name="qmake">
+      <![CDATA[00010001N0005Debug000000000000]]>
+    </Plugin>
+  </Plugins>
+  <VirtualDirectory Name="ports">
+    <VirtualDirectory Name="AX3292">
+      <VirtualDirectory Name="arch">
+        <File Name="../../os/lwip/ports/AX3292/arch/cc.h"/>
+        <File Name="../../os/lwip/ports/AX3292/arch/sys_arch.c"/>
+        <File Name="../../os/lwip/ports/AX3292/arch/sys_arch.h"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <VirtualDirectory Name="2.0.2">
+    <VirtualDirectory Name="netif">
+      <VirtualDirectory Name="ppp">
+        <VirtualDirectory Name="polarssl">
+          <File Name="../../os/lwip/2.0.2/netif/ppp/polarssl/arc4.c"/>
+          <File Name="../../os/lwip/2.0.2/netif/ppp/polarssl/des.c"/>
+          <File Name="../../os/lwip/2.0.2/netif/ppp/polarssl/md4.c"/>
+          <File Name="../../os/lwip/2.0.2/netif/ppp/polarssl/md5.c"/>
+          <File Name="../../os/lwip/2.0.2/netif/ppp/polarssl/sha1.c"/>
+        </VirtualDirectory>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/auth.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/ccp.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/chap-md5.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/chap-new.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/chap_ms.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/demand.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/eap.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/ecp.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/eui64.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/fsm.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/ipcp.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/ipv6cp.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/lcp.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/magic.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/mppe.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/multilink.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/ppp.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/pppapi.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/pppcrypt.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/pppoe.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/pppol2tp.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/pppos.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/upap.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/utils.c"/>
+        <File Name="../../os/lwip/2.0.2/netif/ppp/vj.c"/>
+      </VirtualDirectory>
+      <File Name="../../os/lwip/2.0.2/netif/ethernet.c"/>
+      <File Name="../../os/lwip/2.0.2/netif/ethernetif.c"/>
+      <File Name="../../os/lwip/2.0.2/netif/lowpan6.c"/>
+      <File Name="../../os/lwip/2.0.2/netif/slipif.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="include">
+      <VirtualDirectory Name="posix">
+        <VirtualDirectory Name="sys">
+          <File Name="../../os/lwip/2.0.2/include/posix/sys/socket.h"/>
+        </VirtualDirectory>
+        <File Name="../../os/lwip/2.0.2/include/posix/errno.h"/>
+        <File Name="../../os/lwip/2.0.2/include/posix/netdb.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="netif">
+        <VirtualDirectory Name="ppp">
+          <VirtualDirectory Name="polarssl">
+            <File Name="../../os/lwip/2.0.2/include/netif/ppp/polarssl/arc4.h"/>
+            <File Name="../../os/lwip/2.0.2/include/netif/ppp/polarssl/des.h"/>
+            <File Name="../../os/lwip/2.0.2/include/netif/ppp/polarssl/md4.h"/>
+            <File Name="../../os/lwip/2.0.2/include/netif/ppp/polarssl/md5.h"/>
+            <File Name="../../os/lwip/2.0.2/include/netif/ppp/polarssl/sha1.h"/>
+          </VirtualDirectory>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/ccp.h"/>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/chap-md5.h"/>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/chap-new.h"/>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/chap_ms.h"/>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/eap.h"/>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/ecp.h"/>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/eui64.h"/>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/fsm.h"/>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/ipcp.h"/>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/ipv6cp.h"/>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/lcp.h"/>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/magic.h"/>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/mppe.h"/>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/ppp.h"/>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/pppapi.h"/>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/pppcrypt.h"/>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/pppdebug.h"/>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/pppoe.h"/>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/pppol2tp.h"/>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/pppos.h"/>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/ppp_impl.h"/>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/ppp_opts.h"/>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/upap.h"/>
+          <File Name="../../os/lwip/2.0.2/include/netif/ppp/vj.h"/>
+        </VirtualDirectory>
+        <File Name="../../os/lwip/2.0.2/include/netif/etharp.h"/>
+        <File Name="../../os/lwip/2.0.2/include/netif/ethernet.h"/>
+        <File Name="../../os/lwip/2.0.2/include/netif/lowpan6.h"/>
+        <File Name="../../os/lwip/2.0.2/include/netif/lowpan6_opts.h"/>
+        <File Name="../../os/lwip/2.0.2/include/netif/slipif.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="lwip">
+        <VirtualDirectory Name="apps">
+          <File Name="../../os/lwip/2.0.2/include/lwip/apps/fs.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/apps/httpd.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/apps/httpd_opts.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/apps/lwiperf.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/apps/mdns.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/apps/mdns_opts.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/apps/mdns_priv.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/apps/mqtt.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/apps/mqtt_opts.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/apps/netbiosns.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/apps/netbiosns_opts.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/apps/snmp.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/apps/snmpv3.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/apps/snmp_core.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/apps/snmp_mib2.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/apps/snmp_opts.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/apps/snmp_scalar.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/apps/snmp_table.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/apps/snmp_threadsync.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/apps/sntp.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/apps/sntp_opts.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/apps/tftp_opts.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/apps/tftp_server.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="priv">
+          <File Name="../../os/lwip/2.0.2/include/lwip/priv/api_msg.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/priv/memp_priv.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/priv/memp_std.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/priv/nd6_priv.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/priv/tcpip_priv.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/priv/tcp_priv.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="prot">
+          <File Name="../../os/lwip/2.0.2/include/lwip/prot/autoip.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/prot/dhcp.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/prot/dns.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/prot/etharp.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/prot/ethernet.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/prot/icmp.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/prot/icmp6.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/prot/igmp.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/prot/ip.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/prot/ip4.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/prot/ip6.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/prot/mld6.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/prot/nd6.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/prot/tcp.h"/>
+          <File Name="../../os/lwip/2.0.2/include/lwip/prot/udp.h"/>
+        </VirtualDirectory>
+        <File Name="../../os/lwip/2.0.2/include/lwip/api.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/arch.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/autoip.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/debug.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/def.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/dhcp.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/dhcp6.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/dns.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/err.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/errno.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/etharp.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/ethip6.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/icmp.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/icmp6.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/igmp.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/inet.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/inet_chksum.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/init.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/ip.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/ip4.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/ip4_addr.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/ip4_frag.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/ip6.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/ip6_addr.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/ip6_frag.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/ip_addr.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/mem.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/memp.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/mld6.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/nd6.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/netbuf.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/netdb.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/netif.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/netifapi.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/opt.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/pbuf.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/raw.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/sio.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/snmp.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/sockets.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/stats.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/sys.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/tcp.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/tcpip.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/timeouts.h"/>
+        <File Name="../../os/lwip/2.0.2/include/lwip/udp.h"/>
+      </VirtualDirectory>
+      <File Name="../../os/lwip/2.0.2/include/lwipopts.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="core">
+      <VirtualDirectory Name="ipv4">
+        <File Name="../../os/lwip/2.0.2/core/ipv4/autoip.c"/>
+        <File Name="../../os/lwip/2.0.2/core/ipv4/dhcp.c"/>
+        <File Name="../../os/lwip/2.0.2/core/ipv4/etharp.c"/>
+        <File Name="../../os/lwip/2.0.2/core/ipv4/icmp.c"/>
+        <File Name="../../os/lwip/2.0.2/core/ipv4/igmp.c"/>
+        <File Name="../../os/lwip/2.0.2/core/ipv4/ip4.c"/>
+        <File Name="../../os/lwip/2.0.2/core/ipv4/ip4_addr.c"/>
+        <File Name="../../os/lwip/2.0.2/core/ipv4/ip4_frag.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="ipv6">
+        <File Name="../../os/lwip/2.0.2/core/ipv6/dhcp6.c"/>
+        <File Name="../../os/lwip/2.0.2/core/ipv6/ethip6.c"/>
+        <File Name="../../os/lwip/2.0.2/core/ipv6/icmp6.c"/>
+        <File Name="../../os/lwip/2.0.2/core/ipv6/inet6.c"/>
+        <File Name="../../os/lwip/2.0.2/core/ipv6/ip6.c"/>
+        <File Name="../../os/lwip/2.0.2/core/ipv6/ip6_addr.c"/>
+        <File Name="../../os/lwip/2.0.2/core/ipv6/ip6_frag.c"/>
+        <File Name="../../os/lwip/2.0.2/core/ipv6/mld6.c"/>
+        <File Name="../../os/lwip/2.0.2/core/ipv6/nd6.c"/>
+      </VirtualDirectory>
+      <File Name="../../os/lwip/2.0.2/core/def.c"/>
+      <File Name="../../os/lwip/2.0.2/core/dns.c"/>
+      <File Name="../../os/lwip/2.0.2/core/inet_chksum.c"/>
+      <File Name="../../os/lwip/2.0.2/core/init.c"/>
+      <File Name="../../os/lwip/2.0.2/core/ip.c"/>
+      <File Name="../../os/lwip/2.0.2/core/mem.c"/>
+      <File Name="../../os/lwip/2.0.2/core/memp.c"/>
+      <File Name="../../os/lwip/2.0.2/core/netif.c"/>
+      <File Name="../../os/lwip/2.0.2/core/pbuf.c"/>
+      <File Name="../../os/lwip/2.0.2/core/raw.c"/>
+      <File Name="../../os/lwip/2.0.2/core/stats.c"/>
+      <File Name="../../os/lwip/2.0.2/core/sys.c"/>
+      <File Name="../../os/lwip/2.0.2/core/tcp.c"/>
+      <File Name="../../os/lwip/2.0.2/core/tcp_in.c"/>
+      <File Name="../../os/lwip/2.0.2/core/tcp_out.c"/>
+      <File Name="../../os/lwip/2.0.2/core/timeouts.c"/>
+      <File Name="../../os/lwip/2.0.2/core/udp.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="api">
+      <File Name="../../os/lwip/2.0.2/api/api_lib.c"/>
+      <File Name="../../os/lwip/2.0.2/api/api_msg.c"/>
+      <File Name="../../os/lwip/2.0.2/api/err.c"/>
+      <File Name="../../os/lwip/2.0.2/api/netbuf.c"/>
+      <File Name="../../os/lwip/2.0.2/api/netdb.c"/>
+      <File Name="../../os/lwip/2.0.2/api/netifapi.c"/>
+      <File Name="../../os/lwip/2.0.2/api/sockets.c"/>
+      <File Name="../../os/lwip/2.0.2/api/tcpip.c"/>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <Description/>
+  <Dependencies/>
+  <Settings Type="Static Library">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="ap32" DebuggerType="GNU gdb debugger" Type="Static Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g;-Os;-Wall" C_Options="-g;-Os;-Wall;-mhard-div;-ffunction-sections;-fdata-sections" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="../../os/freeRTOS/inc"/>
+        <IncludePath Value="../../os/freeRTOS/ports/AX3292"/>
+        <IncludePath Value="../../os/freeRTOS/osal"/>
+        <IncludePath Value="../../arch/AX3292"/>
+        <IncludePath Value="../../arch/AX3292/inc"/>
+        <IncludePath Value="../../inc"/>
+        <IncludePath Value="../../os/lwip/2.0.2/include"/>
+        <IncludePath Value="../../os/lwip/ports/AX3292"/>
+        <IncludePath Value="../../board/AX3292/mvl8801"/>
+      </Compiler>
+      <Linker Options="" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="../lib$(ProjectName).a" IntermediateDirectory="./Debug" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <BuildSystem Name="Default"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+  <Dependencies Name="Debug"/>
+</CodeLite_Project>

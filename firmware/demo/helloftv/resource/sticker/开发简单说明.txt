@@ -1,0 +1,12 @@
+1、这个工具需要3个外部程序,ffmpeg、lua、tcc
+2、ffmpeg主要是将图片解码成yuv数据
+3、tcc是一个c编译器,这个工具有一个处理yuv数据的程序是C语言写的(yuv.c)
+4、lua自动生成bat脚本而已,实际上用c也是可以,但为了快速实现直接用其他脚本
+5、make.json是配置文件,要用标准json格式,不能错
+    简单说明json各个item的意义:
+    "input"是输入文件的名称
+    "output"是输出yuv数据的名称(主要是给c语言使用,最后这个是不需要的,但如果要查看解码的yuv数据,则不同用同一个名称)
+    "outputList"生成的一个bin文件,实际上是一个链表信息,固件最后需要的
+    "outSize"是解码成yuv的分辨率,根据自己需要配置,如果要支持720p、VGA的sensor以及显示屏显示的相框,则size分别是1280x720、640x480、video_w X video_h(注意这个是要与lcd配置文件一直)
+    
+6、在不改动的情况下,只需要配置make.json,然后make-all.bat即可在bin文件夹生成对应的bin文件

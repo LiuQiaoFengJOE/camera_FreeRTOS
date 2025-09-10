@@ -1,0 +1,269 @@
+================================================================================
+arch            : 芯片BSP層，祇有這一層的程序可以include芯片的頭文件
+                  各個芯片提供盡量一致的接口
+                  可以封裝到庫
+                  不同芯片分不同的子目錄，並且創建自己的庫project
+  mingw         : 在mingw環境下模擬一個芯片
+  AX3268        : 某芯片
+  AX3278        : 某芯片
+board           : 板級配置和板級初始化
+                  芯片接口無法難以統一時，在板級解決
+                  不封裝，作為app project的一部分
+                  board_config.h文件每個app project都有一個，隨時可配。board.c可以在相同芯片的不同app project間複用
+  AX3268        : AX3268的板級
+    board.c     : AX3268板級實現
+    board_def.h : AX3268板級可用選項
+    mvl8801     : AX3268+MVL8801的board_config.h存放於此
+    mt7601      : AX3268+MT7601的board_config.h存放於此
+boot            : 管理與啟動有關的庫
+  unzip         : 啟動過程中的解壓引擎
+  bootFAT32     : 啟動過程中，支持從FAT32文件系統啟動指定文件
+os              : 操作系統
+  freeRTOS      : freeRTOS源碼及其osal實現
+                  為了freeRTOS自身移植的整體性，可以在ports目錄下包含本屬於arch的部分，例如portasm.S。嚴格來說是CPU的部分，不是arch
+  lwip          : lwip源碼
+                  雖然lwip應該屬於下面的sys層，但Linux/Windows都是自帶網絡層的，因此將lwip放到這裏配合freeRTOS
+  mingw         : 作為一個對比操作系統，可以用來調試OSAL之上的sys/app等層次的軟件
+sys             : 平臺無關的系統程序庫，例如eloop/fatfs/printf/udhcp等。
+                  drv也在此列，要注意drv驅動是抽象概念的驅動、而非某具體硬件的操作BSP函數
+lib             : 可以開放給方案商使用的庫；但方案商可將此目錄打包成庫
+cfg             : 完全以源碼形式開放的程序，用於最後的配置階段
+  drv           : 配置各種驅動
+    lcd         : 各種lcd配置
+    sensor      : 各種sensor配置
+app             : 與具體應用密切相關的程序。板級部分在board，不在此
+  app1          : 某應用
+  app2          : 某應用
+prj             : app project，包含app/board/lib.a等
+                  不包含任何程序模塊，祇是workspace/project
+  prj1          : 某應用的工程、工作臺
+  prj2          : 某應用的工程、工作臺
+demo            : 作为app/prj的結合體，僅提供一些測試用例和演示，不想污染app/prj而增設
+  demo1         : 某測試演示用例的app程序及工程、工作臺
+sdk             : sdk project。包含arch/os/sys/linux等部分，按需要組織成庫project，可以統一到一個workspace
+  AX3268        : AX3268芯片的project和庫輸出於此
+  AX3278        : AX3278芯片的project和庫輸出於此
+  mingw         : mingw“芯片”的project和庫輸出於此
+tools           : 各種工具集中在這裡
+  boottool      : 產生ramdisk的工具
+    lib         : boottool所用到的庫
+      unzip     : 解壓引擎，此處的解壓引擎僅作為demo。真正的解壓引擎在boot/unzip
+  gen-jpeg      : 一個簡易的生成jpg圖片的工具
+  bmp2png       : 簡易的圖片格式轉換工具，可將bmp格式圖片轉換成帶透明色的png
+  res-xlsx      : 資源文件處理工具，將所有資源處理、打包成一個資源文件，供內部resfs使用
+
+================================================================================
+FAT32啟動支持
+
+FAT32啟動支持模塊由以下子模塊構成：
+  * DBR       : DBR啟動參數
+  * MBR       : MBR啟動參數
+  * BootBSP   : 與BSP有關的初始化和支持函數
+  * BootFAT32 : 加載一個指定文件
+
+目前：
+- DBR/MBR已經剝離乾淨。
+- BootBSP尚未跟BootFAT32分離完善，但已經是一個獨立扇區
+
+待BootBSP與BootFAT32分離乾淨，則可以把BootFAT32單獨生成一個bin文件，
+並且可以減輕BootBSP扇區的容量負擔。
+
+BootFAT32的功能已經很大程度上進行了分離，支持多次啟動。啟動參數結構為：
+struct LOAD_PARAM {
+  uint32_t (*find_load_file) (void);
+  uint32_t rambase;
+  uint32_t entry;
+  uint8_t  filename[12];
+  void (*rambase_adjust) (uint32_t *param);
+  uint32_t filelen;
+};
+外部程序祇需要調用find_load_file函數指針即可。它的函數原型是：
+uint32_t find_load_file (uint32_t dummy, uint8_t *param)
+傳入一個param指針即可；這個指針，指向LOAD_PARAM的rambase即可。
+（參照下面的Boost引擎，所定義的struct boost_t結構，與LOAD_PARAM祇差別一頭一尾。
+頭部即函數指針；尾部filelen為find_load_file內部使用不必理會）
+
+----------------------------------------------------------------------
+20180124開始添加了rambase_adjust回調。
+
+在此之前的版本，沒有考慮回調。
+find_load_file調用find函數之後，隨即調用load函數進行加載；
+中間不會對rambase進行修正。
+
+添加了rambase_adjust之後，為了保持兼容性，不需要回調的，rambase_adjust置0即可。
+這樣，象下面的Boost引擎，不初始化或將rambase_adjust初始化為0即可。
+
+如果rambase_adjust非0，find_load_file的處理邏輯是：
+if (load_param.rambase_adjust) load_param.rambase_adjust (&load_param.rambase);
+這會回調rambase_adjust函數，並且傳入rambase參數的地址。
+
+需要回憶的是，find_load_file入口處，將傳入的param複製到了內部的struct LOAD_PARAM load_param中了。
+在find函數中，會將文件的實際長度填入load_param.filelen中。
+因此，通過&load_param.rambase，可以很容易獲取到實際文件的長度。
+
+----------------------------
+filelen與rambase有什麼關係？
+在之前的版本中，沒有關係，所以不需要rambase_adjust回調。
+
+現在有了一個新的需求，解壓引擎需要調用find_load_file，這本身還不構成問題。
+問題來自於，解壓引擎所要解壓的文件，最重要的是主應用程序，可能被升級。
+
+不希望升級操作本身有太多的東西要處理，祇需要把文件替換一下就好了。這樣問題就來了：
+
+解壓引擎需要為待解壓的文件安排一個內存空間。
+這個空間要考慮的問題是，空間需要處於內存的低端到高端的某處：
+太低了，容易在解壓時被解壓後的數據超越；
+太高了，升級後的程序如果增太了越過內存高端了，也不行。
+
+因此，最好的解決辦法是，貼著解壓後的數據高端存放。
+這樣，升級前的rambase計算公式是：
+rambase_ziped = rambase_unzip + filelen_unzip - filelen_ziped
+(其中，_unzip後綴表示解壓後的數值、_ziped表示解壓前的數值)
+
+壓縮引擎很容易根據壓縮前後的數值，計算出rambase_ziped值。
+這個rambase_ziped被解壓引擎記錄下來，這就是開始傳遞給find_load_file的rambase。
+
+現在升級出現了，解壓引擎一開始並不知道升級發生過(前述，升級祇替換一下文件就好)。
+所以解壓引擎還是將原先的rambase傳遞給find_load_file。
+這個錯誤的rambase在find階段不會有副作用，祇會用來緩存一下dir扇區。
+但find之後要load的時候，rambase就是必須正確的rambase了，否則就會有上面提到的空間問題出現。
+
+find已經將真正的filelen_ziped讀出來了，就存放在load_param.filelen上。
+解壓引擎祇也存有原先的filelen_ziped，這個升級變化就很容易被檢查出來。
+filelen_ziped變大了，通常意味著filelen_unzip也變大了，因此要將rambase相應往高再推推：
+rambase += (filelen_ziped_new - filelen_ziped_org) * 2;
+為什麼要乘以2？壓縮度一般是50%左右，即一般filelen_unzip < filelen_ziped * 2
+
+經過上述修正，find_load_file再調用load，後面調用解壓程序就比較安全了。
+
+當然，上面所說的是一般情況，萬一filelen_unzip_new < filelen_ziped_new * 2不成立呢？
+還有一個補救措施，就是在load之後，通過zip參數來檢查，甚至通過unzip失敗來補救。
+
+但其實還有一個萬全之策。將壓縮數據停靠在內存尺寸的高端，而不是filelen_unzip的高端。
+這樣，在獲取到filelen_ziped_new之後：
+rambase -= filelen_ziped_new - filelen_ziped_org
+就可以了。也就是說，文件增大了，往前挪一下就好了。
+
+不管上述哪個方案，rambase_adjust回調都是必須的。
+至於採取哪個方案，則是壓縮引擎和解壓引擎的事，與BootFAT32沒有關係了。
+
+
+
+================================================================================
+Boost引擎
+
+Boost引擎，一個在少量的SRAM上進行切bank的簡易工具。
+
+在SDRAM初始化之前、包括SDRAM檢驗程序，需要運行在SRAM；
+而當SRAM容量很小時，需要將這些程序分散成多個小塊運行。
+
+通過Boost引擎，可以在SRAM上順序地運行多個小程序，
+從而解決了在SDRAM被最終確認可靠之前的程序有安身之所。
+
+----------------------------------------------------------------------
+struct boost_t {
+  uint32_t rambase;
+  uint32_t entry;
+  uint8_t  filename[12];
+  void (*rambase_adjust) (uint32_t *param);
+};
+在每個Boost小程序頭部，有一個boost_t結構的頭標。
+
+Boost頭標在不同階段有不同的含義：
+1、在boottool程序處理之前，頭標記錄Boost程序自己的信息
+2、在boottool程序處理之後、保存到運行環境的磁盤結構中時，
+   頭標記錄著Boost程序運行完成之後下一個運行文件的信息
+
+boottool處理前：
+rambase  : 記錄自己的起始地址
+entry    : 記錄自己的入口地址
+filename : 沒有用處
+
+boottool處理後：
+rambase  : 記錄下一個程序的起始地址
+entry    : 記錄下一個程序的入口地址
+filename : 記錄下一個程序的8.3格式文件名
+
+boottool工具利用頭標結構，將一系列的Boost程序和最終應用串起來。
+一個Boost程序運行結束，將頭標結構返回給BootFAT32，將下一個文件加載進來繼續執行。
+
+----------------------------------------------------------------------
+在Boost庫中，已經定義好了boostentry0、boostentry1等一系列的支持函數，
+每個支持函數會調用boost0、boost1這些與自己序號對應的函數。
+例如boostentry0會調用boost0。
+
+
+每個Boost程序祇需要定義boost_t實例：
+void boostentry1(void);
+
+__attribute__((section(".text.boosthdr")))
+struct boost_t boosthdr_1 =
+{
+  .rambase = (uint32_t) boost_start,
+  .entry   = (uint32_t) boostentry1,
+};
+
+並且定義自己的處理函數：
+struct boost_t *boost1(void)
+{
+  //do something here
+
+  return &boosthdr_1;
+}
+
+----------------------------------------------------------------------
+一個工程中，最好從序號0開始依次定義及實現每個Boost程序。
+如果Boost程序很多，還可以按功能分類，每個類別都可以建立各自的工程；
+每個工程都可以從序號0開始定義自己的Boost程序組。
+
+boottool能夠串起多個Boost程序組，將每個組中的每個Boost程序串起來；
+在同一個組中，序號0的Boost程序被首先執行，然後是序號1，依此類推。
+
+----------------------------------------------------------------------
+在一個Boost工程中，ld-script文件要仔細定義好。
+
+需要定義一個overlay結構，以便Boost工程中的每個Boost程序共同SRAM的空間。
+    .text.boost0 boost_start : AT(0) {
+      KEEP(*step0*.o(
+        .text.boosthdr
+      ))
+      *(.text.boostentry.0)
+      *step0*.o(
+        .text*
+        .rodata*
+        .data*
+      )
+      ASSERT (. <= boost_max, "boost0 too large");
+    }
+
+    .text.boost1 boost_start : AT(boost_max) {
+      KEEP(*step1*.o(
+        .text.boosthdr
+      ))
+      *(.text.boostentry.1)
+      *step1*.o(
+        .text*
+        .rodata*
+        .data*
+      )
+      ASSERT (. <= boost_max, "boost1 too large");
+    }
+上面這個結構會多次出現，每個序號不一樣。
+理論上，序號的順序是無所謂的，AT()關鍵字決定了Boost程序的順序。
+但不推薦亂序的定義，以免造成理解上的混亂。
+
+上面的這些輸入段中，
+.text.boosthdr必須保持在輸出段的最前面；
+其他輸入段則沒有要求。
+
+
+TBD
+
+
+
+
+
+
+
+
+

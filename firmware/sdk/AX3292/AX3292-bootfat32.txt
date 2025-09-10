@@ -1,0 +1,1 @@
+./Debug/bootfat32_fat32.c.o ./Debug/AX3292_entry.S.o   

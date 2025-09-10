@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="lib_ax3268_atbm" Version="10.0.0" InternalType="">
+  <Plugins>
+    <Plugin Name="qmake">
+      <![CDATA[00010001N0005Debug000000000000]]>
+    </Plugin>
+    <Plugin Name="CMakePlugin">
+      <![CDATA[[{
+  "name": "Debug",
+  "enabled": false,
+  "buildDirectory": "build",
+  "sourceDirectory": "$(ProjectPath)",
+  "generator": "",
+  "buildType": "",
+  "arguments": [],
+  "parentProject": ""
+ }]]]>
+    </Plugin>
+  </Plugins>
+  <VirtualDirectory Name="os">
+    <VirtualDirectory Name="ankai_os">
+      <VirtualDirectory Name="ak_os_api">
+        <File Name="os/ankai_os/ak_os_api/wifi_atbm_api.c"/>
+        <File Name="os/ankai_os/ak_os_api/wifi_netif.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="include">
+        <File Name="os/ankai_os/include/atbm_os_api.h"/>
+        <File Name="os/ankai_os/include/atbm_os_atomic.h"/>
+        <File Name="os/ankai_os/include/atbm_os_debug.h"/>
+        <File Name="os/ankai_os/include/atbm_os_mem.h"/>
+        <File Name="os/ankai_os/include/atbm_os_mutex.h"/>
+        <File Name="os/ankai_os/include/atbm_os_sdio.h"/>
+        <File Name="os/ankai_os/include/atbm_os_skbuf.h"/>
+        <File Name="os/ankai_os/include/atbm_os_spinlock.h"/>
+        <File Name="os/ankai_os/include/atbm_os_thread.h"/>
+        <File Name="os/ankai_os/include/atbm_os_timer.h"/>
+        <File Name="os/ankai_os/include/atbm_os_usb.h"/>
+        <File Name="os/ankai_os/include/atbm_os_workqueue.h"/>
+        <File Name="os/ankai_os/include/os_api.h"/>
+      </VirtualDirectory>
+      <File Name="os/ankai_os/atbm_os_api.c"/>
+      <File Name="os/ankai_os/atbm_os_atomic.c"/>
+      <File Name="os/ankai_os/atbm_os_mem.c"/>
+      <File Name="os/ankai_os/atbm_os_mutex.c"/>
+      <File Name="os/ankai_os/atbm_os_sdio.c"/>
+      <File Name="os/ankai_os/atbm_os_skbuf.c"/>
+      <File Name="os/ankai_os/atbm_os_spinlock.c"/>
+      <File Name="os/ankai_os/atbm_os_thread.c"/>
+      <File Name="os/ankai_os/atbm_os_timer.c"/>
+      <File Name="os/ankai_os/atbm_os_usb.c"/>
+      <File Name="os/ankai_os/atbm_os_workqueue.c"/>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <VirtualDirectory Name="net">
+    <VirtualDirectory Name="include">
+      <VirtualDirectory Name="proto">
+        <File Name="net/include/proto/atbm_proto.h"/>
+      </VirtualDirectory>
+      <File Name="net/include/atbm_key.h"/>
+      <File Name="net/include/atbm_mac80211.h"/>
+      <File Name="net/include/atbm_mgmt.h"/>
+      <File Name="net/include/atbm_ratectrl.h"/>
+      <File Name="net/include/atbm_rc80211_minstrel.h"/>
+      <File Name="net/include/atbm_rc80211_minstrel_ht.h"/>
+      <File Name="net/include/atbm_rc80211_pid.h"/>
+      <File Name="net/include/atbm_sha1.h"/>
+      <File Name="net/include/hostapd_main.h"/>
+      <File Name="net/include/hostapd_sta_info.h"/>
+      <File Name="net/include/os_net_type.h"/>
+      <File Name="net/include/wpa_auth_i.h"/>
+      <File Name="net/include/wpa_common.h"/>
+      <File Name="net/include/wpa_i.h"/>
+      <File Name="net/include/wpa_main.h"/>
+      <File Name="net/include/wpa_supplicant_i.h"/>
+      <File Name="net/include/wpa_timer.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="wpa">
+      <File Name="net/wpa/aes_core.c"/>
+      <File Name="net/wpa/hostapd_main.c"/>
+      <File Name="net/wpa/sha1.c"/>
+      <File Name="net/wpa/wpa_common.c"/>
+      <File Name="net/wpa/wpa_main.c"/>
+      <File Name="net/wpa/wpa_timer.c"/>
+    </VirtualDirectory>
+    <File Name="net/app_wifi_cmd.c"/>
+    <File Name="net/atbm_key.c"/>
+    <File Name="net/atbm_mgmt.c"/>
+    <File Name="net/atbm_ratectrl.c"/>
+    <File Name="net/atbm_rc80211_minstrel.c"/>
+    <File Name="net/atbm_rc80211_minstrel_ht.c"/>
+    <File Name="net/atbm_rc80211_pid_algo.c"/>
+    <File Name="net/atbm_util.c"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="hal">
+    <VirtualDirectory Name="include">
+      <File Name="hal/include/atbm_debug.h"/>
+      <File Name="hal/include/atbm_etf.h"/>
+      <File Name="hal/include/atbm_hal.h"/>
+      <File Name="hal/include/atbm_lock.h"/>
+      <File Name="hal/include/atbm_queue.h"/>
+      <File Name="hal/include/atbm_sbus.h"/>
+      <File Name="hal/include/atbm_skbuf.h"/>
+      <File Name="hal/include/atbm_smartconfig.h"/>
+      <File Name="hal/include/atbm_task.h"/>
+      <File Name="hal/include/atbm_wsm.h"/>
+      <File Name="hal/include/firmware_athenaB.h"/>
+      <File Name="hal/include/firmware_athenaB_notxconfirm.h"/>
+      <File Name="hal/include/firmware_athenaB_sdio.h"/>
+      <File Name="hal/include/firmware_athenaB_sdio_notxconfirm.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="sdio">
+      <File Name="hal/sdio/atbm_dcxo_dpll.c"/>
+      <File Name="hal/sdio/atbm_dcxo_dpll.h"/>
+      <File Name="hal/sdio/atbm_sdio.c"/>
+      <File Name="hal/sdio/atbm_sdio.h"/>
+      <File Name="hal/sdio/atbm_sdio_bh.c"/>
+      <File Name="hal/sdio/atbm_sdio_bh.h"/>
+      <File Name="hal/sdio/atbm_sdio_fwio.c"/>
+      <File Name="hal/sdio/atbm_sdio_fwio.h"/>
+      <File Name="hal/sdio/atbm_sdio_hwio.c"/>
+      <File Name="hal/sdio/atbm_sdio_hwio.h"/>
+    </VirtualDirectory>
+    <File Name="hal/atbm_ap.c"/>
+    <File Name="hal/atbm_config.c"/>
+    <File Name="hal/atbm_etf.c"/>
+    <File Name="hal/atbm_init.c"/>
+    <File Name="hal/atbm_main.c"/>
+    <File Name="hal/atbm_queue.c"/>
+    <File Name="hal/atbm_skbuf.c"/>
+    <File Name="hal/atbm_smartconfig.c"/>
+    <File Name="hal/atbm_sta.c"/>
+    <File Name="hal/atbm_task.c"/>
+    <File Name="hal/atbm_txrx.c"/>
+    <File Name="hal/atbm_wifi_driver_api.c"/>
+    <File Name="hal/atbm_wsm.c"/>
+    <File Name="hal/smartconfig.c"/>
+  </VirtualDirectory>
+  <Description/>
+  <Dependencies/>
+  <VirtualDirectory Name="api">
+    <File Name="api/atbm_api.c"/>
+    <File Name="api/atbm_api.h"/>
+    <File Name="api/atbm_wifi_driver_api.h"/>
+  </VirtualDirectory>
+  <Settings Type="Static Library">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="or1k" DebuggerType="GNU gdb debugger" Type="Static Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g -Wall" C_Options="-g;-O3;-Wall;-fshort-wchar;-Wno-pointer-sign;-Wno-format;-Wno-array-bounds;-Wno-strict-aliasing;-ffunction-sections;-fdata-sections" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+        <IncludePath Value="./"/>
+        <IncludePath Value="../"/>
+        <IncludePath Value="../../../"/>
+        <IncludePath Value="../../../../"/>
+        <IncludePath Value="../../../../os/linux"/>
+        <IncludePath Value="../../../../os/freeRTOS/api/inc"/>
+        <IncludePath Value="../../../../os/freeRTOS/kernel/inc"/>
+        <IncludePath Value="../../../../os/freeRTOS/ports/openrisc"/>
+        <IncludePath Value="../../../../app/inc"/>
+        <IncludePath Value="../../../../config"/>
+        <IncludePath Value="../../../../net/lwip/src/include/ipv4"/>
+        <IncludePath Value="../../../../net/lwip/src/include"/>
+        <IncludePath Value="../../../../net/lwip/src/arch"/>
+        <IncludePath Value="../../../../net/lwip/src"/>
+        <IncludePath Value="../../../../net/udhcp"/>
+        <IncludePath Value="../../../../drivers/inc"/>
+        <IncludePath Value="../../../../drivers/uart"/>
+        <IncludePath Value="../../../../drivers/sdc"/>
+        <IncludePath Value="../../../../drivers"/>
+        <IncludePath Value="../../../../net/udhcp-0.9.8"/>
+        <IncludePath Value="../../../../net/wpa"/>
+        <IncludePath Value="../../../../net/wireless"/>
+        <IncludePath Value="../../../../net/http"/>
+        <IncludePath Value="../../../../net/spook"/>
+        <IncludePath Value="../../../../net/eloop"/>
+        <IncludePath Value="../../../../net/lwip/src/include/lwip"/>
+        <IncludePath Value="../../../../drivers/sd/sdcard"/>
+        <IncludePath Value="../../../../drivers/sd/sdio"/>
+        <IncludePath Value="../../../../drivers/appodriver/sdio"/>
+        <IncludePath Value="../../../../inc"/>
+        <IncludePath Value="../../../../inc/hld/sdio"/>
+        <IncludePath Value="../../../../inc/board/AX3268_atbm"/>
+        <IncludePath Value="../../../../inc/system/AX3268"/>
+        <IncludePath Value="../../../../drivers/thirddriver/wifi/atbm/include"/>
+        <IncludePath Value="../../../../drivers/thirddriver/wifi/atbm/hal/include"/>
+        <IncludePath Value="../../../../drivers/thirddriver/wifi/atbm/hal/sdio"/>
+        <IncludePath Value="../../../../drivers/thirddriver/wifi/atbm/net/include"/>
+        <IncludePath Value="../../../../drivers/thirddriver/wifi/atbm/net/include/proto"/>
+        <IncludePath Value="../../../../drivers/thirddriver/wifi/atbm/os/ankai_os/include"/>
+        <IncludePath Value="../../../../drivers/thirddriver/wifi/atbm/os/include"/>
+        <IncludePath Value="../../../../drivers/thirddriver/wifi/atbm/api"/>
+      </Compiler>
+      <Linker Options="" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="$(IntermediateDirectory)/lib$(ProjectName).a" IntermediateDirectory="./Debug" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild>
+        <Command Enabled="yes">copy /Y .\Debug\lib$(ProjectName).a ..\..\..\..\lib\lib_atbm.a</Command>
+      </PostBuild>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+  <Dependencies Name="Debug"/>
+</CodeLite_Project>

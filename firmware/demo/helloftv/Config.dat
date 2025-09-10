@@ -1,0 +1,156 @@
+# The file will be copy to the sys-disk with the firmware
+# One can config many things
+
+Packer rtp {
+  Input      "jpg-auto";
+  Output     "rtp-packer";
+  Frameheap   3 1440 150;
+}
+
+Packer audio-rtp {
+  Input      "auadc-pcm";
+  Output     "rtp-audio-packer";
+  Frameheap   3 1440 23;
+}
+
+Sender rtp {
+  Input      "rtp-packer";
+  Input      "rtp-audio-packer";
+  Output     "rtsp-sender";
+}
+
+RTSP-Handler Live {
+  Media       "jpeg"  "audio";
+  Path        /webcam;
+}
+
+RTSP-Handler File {
+  Media       "jpeg"  "audio";
+  Path        /file;
+}
+
+Parser tcp {
+  proto      "RTSP/";
+#  port        7070;
+  port        8080;
+}
+
+yuv csi0 {
+  Output     "yuv-csi0";
+}
+
+yuv csi1 {
+  Output     "yuv-csi1";
+}
+
+yuv csiuvc {
+  Output     "yuv-csiuvc";
+}
+
+yuv usb {
+  Output     "yuv-usb";
+}
+
+usb1 check {
+  Output     "usb1-check";
+}
+
+usb2 check {
+  Output     "usb2-check";
+}
+
+pic combine {
+  Output     "picCombine";
+}
+
+jpgenc auto {
+  Output     "jpg-auto";
+  Frameheap   30 16384 86;
+  Media       "jpeg";
+}
+
+jpgenc manu0 {
+  Input      "yuv-csi0";
+  Output     "jpg-manu0";
+  Frameheap   30 16384 86;
+  Media       "jpeg";
+}
+
+jpgenc manu1 {
+  Input      "yuv-csi1";
+  Output     "jpg-manu1";
+  Frameheap   5 16384 20;
+  Media       "jpeg";
+}
+
+Input auadc {
+  Output      "auadc-pcm";
+  framenum    6   16384;
+  Media       "audio";     
+  gain	      3 8;
+}
+
+record file {
+  Input       "jpg-manu";
+  Input       "auadc-pcm";
+  Output     "recorder";
+}
+
+read file {
+  Output      "read-mediafile";
+  Frameheap   80 16384 120;
+}
+
+jpg swres {
+  Output     "jpg-swres";
+  Frameheap   10 16384 40;
+  Media       "jpeg";
+}
+
+play net {
+  Input       "read-mediafile";
+  Output     "jpg-file"  "auadc-file";
+  Media       "jpeg"  "audio";
+}
+
+play video {
+  Input       "read-mediafile";
+}
+
+zbar identify {
+  Input       "yuv-csi0";
+}
+
+usb device {
+  Input       "jpg-manu";
+  Output     "usb-device";
+}
+
+input uvc {
+  Output     "usb-uvc";
+  Frameheap   30 16384 36;
+  Media       "jpeg";
+}
+
+input uvc2 {
+  Output     "usb-uvc2";
+  Frameheap   30 16384 36;
+  Media       "jpeg";
+}
+
+test stream {
+  Output     "test-stream";
+}
+
+pic printer {
+  Input      "jpg-auto";
+  Output     "pic-printer";
+}
+
+# NOTE:
+# 1. all command should be end with a ';'!
+# 2. string can be quoted with a pair of '"', but a simple string can omit the '"',
+*    for example the simple file name : Config.dat
+# 3. digit number can be decimal or hexadecimal
+# 4. the command is case-insensitive
+

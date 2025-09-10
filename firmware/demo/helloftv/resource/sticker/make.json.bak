@@ -1,0 +1,54 @@
+[
+    {
+        "input": "frame1.jpg",
+        "output": "4.yuv",
+		"outputList": "framelista1.bin",
+		"outSize": "1280x720"
+    },
+    {
+        "input": "frame2.jpg",
+        "output": "4.yuv",
+		"outputList": "framelista2.bin",
+		"outSize": "1280x720"
+    },
+    {
+        "input": "frame3.jpg",
+        "output": "4.yuv",
+		"outputList": "framelista3.bin",
+		"outSize": "1280x720"
+    },
+    {
+        "input": "frame4.jpg",
+        "output": "4.yuv",
+		"outputList": "framelista4.bin",
+		"outSize": "1280x720"
+    },
+	
+	
+	
+    {
+        "input": "frame1.jpg",
+        "output": "4.yuv",
+		"outputList": "framelistb1.bin",
+		"outSize": "640x480"
+    },
+    {
+        "input": "frame2.jpg",
+        "output": "4.yuv",
+		"outputList": "framelistb2.bin",
+		"outSize": "640x480"
+    },
+    {
+        "input": "frame3.jpg",
+        "output": "4.yuv",
+		"outputList": "framelistb3.bin",
+		"outSize": "640x480"
+    },
+    {
+        "input": "frame4.jpg",
+        "output": "4.yuv",
+		"outputList": "framelistb4.bin",
+		"outSize": "640x480"
+    }
+
+]

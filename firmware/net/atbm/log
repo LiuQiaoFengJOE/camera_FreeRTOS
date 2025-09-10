@@ -1,0 +1,132 @@
+Index: Makefile
+===================================================================
+--- Makefile	(revision 6004)
++++ Makefile	(working copy)
+@@ -1,6 +1,71 @@
+-all:
+-	echo "start build"
+-	make -C build INTF=USB OsType=rtos project=AthenaB
+-clean:
+-	echo "clean complete" 
+-	rm -rf lib/*.a	
++TOPDIR 	?= $(shell pwd)/../../../..
++KERNELDIR ?= $(TOPDIR)/kernel
++CUR_DIR ?= $(shell pwd)
++TARGET = libwifi_atbmwifi
++LDFLAGS = -p -X -Map maps.txt -T section.lds
++chips := ak39e
++LWIP_VER := 1.4.1
++
++WRAP_FUNC = malloc calloc realloc free
++
++LDFLAGS += $(addprefix --wrap=, $(WRAP_FUNC))
++KER_INCLUDE    =     -I. \
++                -I$(KERNELDIR)/include \
++                -I$(KERNELDIR)/include/driver \
++                -I$(KERNELDIR)/include/os \
++                -I$(KERNELDIR)/include/lwip_$(LWIP_VER) \
++                -I$(KERNELDIR)/include/lwip_$(LWIP_VER)/ipv4 \
++                -I$(KERNELDIR)/include/fs \
++                -I$(KERNELDIR)/mach/mach-$(chips) \
++                -I$(KERNELDIR)/common \
++                -I$(KERNELDIR)/fs \
++                -I$(KERNELDIR)/include/partition \
++                -I$(KERNELDIR)/partition \
++                -I$(KERNELDIR)/net/wifi \
++                -I$(KERNELDIR)/driver/include
++
++#include .h
++INCLUDE    =	-I. \
++		-I$(CUR_DIR)/api \
++		-I$(CUR_DIR)/hal \
++		-I$(CUR_DIR)/hal/sdio \
++		-I$(CUR_DIR)/hal/include \
++		-I$(CUR_DIR)/include \
++		-I$(CUR_DIR)/net/include \
++		-I$(CUR_DIR)/net/include/proto \
++		-I$(CUR_DIR)/os/include	\
++		-I$(CUR_DIR)/os/ankai_os/include
++
++INCLUDE += $(GLB_INCLUDE) $(KER_INCLUDE)
++
++#include .c
++SRCDIR += \
++		$(CUR_DIR)/api \
++		$(CUR_DIR)/hal	\
++		$(CUR_DIR)/hal/sdio \
++		$(CUR_DIR)/net \
++		$(CUR_DIR)/net/wpa \
++		$(CUR_DIR)/os/ankai_os
++
++CSRCS += $(foreach d, $(SRCDIR), $(wildcard $d/*.c))
++
++COBJS += $(patsubst %.c, %.o, $(CSRCS))
++
++
++
++#build rule
++.PHONY: all $(TARGET) clean
++
++all: $(TARGET) 
++
++$(TARGET): $(COBJS) 
++	@echo ---------------------[build obj complete]----------------------------------	
++	$(AR) rc $(TARGET).a $(COBJS) $(CLIB)
++
++
++clean : 
++	$(RM) $(COBJS)
++	$(RM) $(TARGET).a
++
++# Rules
++include $(TOPDIR)/rules.mk
+Index: include/atbm_config.h
+===================================================================
+--- include/atbm_config.h	(revision 6004)
++++ include/atbm_config.h	(working copy)
+@@ -163,8 +163,8 @@
+ #define TEST_AP_PWD "1234567890"
+ #define TEST_AP_KEYMGM ATBM_KEY_WPA2
+ #define DEFAULT_BEACON_LOSS_CNT      40
+-#define ATBM_USB_BUS 1
+-#define ATBM_SDIO_BUS 0
++#define ATBM_USB_BUS 0
++#define ATBM_SDIO_BUS 1
+ #define ATBM_PKG_REORDER 0
+ #define BW_40M_SUPPORT  0
+ #define OLD_RATE_POLICY 0
+Index: net/wpa/wpa_timer.c
+===================================================================
+--- net/wpa/wpa_timer.c	(revision 6004)
++++ net/wpa/wpa_timer.c	(working copy)
+@@ -130,9 +130,8 @@
+ 	atbm_list_move_tail(&event_pendig->list,&atbm_wpa_event_free_list);
+ }
+ */
+-#define ATBM_WPA_EVENT_PROCESS_QUEUED_EV(_pevent)															\
++#define ATBM_WPA_EVENT_PROCESS_QUEUED_EV(_pevent,_irq_flag)															\
+ 		do{																									\
+-			atbm_uint32 _irq_flag = 0;																		\
+ 			atbm_wpa_queue_ev_get(_pevent);																	\
+ 			atbm_wpa_event_unlock(_irq_flag);																\
+ 			atbm_wpa_event_process(_pevent);																\
+@@ -200,9 +199,8 @@
+ atbm_wpa_event_lock(irq_flag);
+ 
+ */
+-#define ATBM_WPA_EVENT_PROCESS_QUEUED_EV(_pevent)															\
++#define ATBM_WPA_EVENT_PROCESS_QUEUED_EV(_pevent,_irq_flag)															\
+ 		do{																									\
+-			atbm_uint32 _irq_flag = 0;																		\
+ 			atbm_wpa_queue_ev_get(_pevent);																	\
+ 			atbm_list_del(_pevent);																			\
+ 			atbm_wpa_event_unlock(_irq_flag);																\
+@@ -758,7 +756,7 @@
+ 	while(!atbm_list_empty(&atbm_wpa_event_pending_list)){
+ 		struct atbm_wpa_event *event_pendig = ATBM_NULL;
+ 		atbm_wpa_event_in_running();
+-		ATBM_WPA_EVENT_PROCESS_QUEUED_EV(event_pendig);
++		ATBM_WPA_EVENT_PROCESS_QUEUED_EV(event_pendig,irq_flag);
+ 	}
+ 	atbm_wpa_event_out_running();
+ 	atbm_wpa_event_unlock(irq_flag);

@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="AX3292-sys" Version="10.0.0" InternalType="">
+  <Plugins>
+    <Plugin Name="qmake">
+      <![CDATA[00010001N0005Debug000000000000]]>
+    </Plugin>
+    <Plugin Name="CMakePlugin">
+      <![CDATA[[{
+  "name": "Debug",
+  "enabled": false,
+  "buildDirectory": "build",
+  "sourceDirectory": "$(ProjectPath)",
+  "generator": "",
+  "buildType": "",
+  "arguments": [],
+  "parentProject": ""
+ }]]]>
+    </Plugin>
+  </Plugins>
+  <VirtualDirectory Name="drv">
+    <VirtualDirectory Name="csi">
+      <File Name="../../sys/drv/csi/ax32xx_csi.h"/>
+      <File Name="../../sys/drv/csi/common.c"/>
+      <File Name="../../sys/drv/csi/csiScale0.c"/>
+      <File Name="../../sys/drv/csi/csiScale1.c"/>
+      <File Name="../../sys/drv/csi/hal_csi.h"/>
+      <File Name="../../sys/drv/csi/csiScaleuvc.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="dac">
+      <File Name="../../sys/drv/dac/dac.c"/>
+      <File Name="../../sys/drv/dac/dac.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="freeRTOS">
+      <File Name="../../sys/drv/freeRTOS/timer.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="i2c">
+      <File Name="../../sys/drv/i2c/i2c.c"/>
+      <File Name="../../sys/drv/i2c/i2c.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="isp">
+      <File Name="../../sys/drv/isp/ax32xx_isp.h"/>
+      <File Name="../../sys/drv/isp/hal_isp.c"/>
+      <File Name="../../sys/drv/isp/hal_isp.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="lcd">
+      <File Name="../../sys/drv/lcd/lcdb.c"/>
+      <File Name="../../sys/drv/lcd/lcddev.c"/>
+      <File Name="../../sys/drv/lcd/lcdframe.c"/>
+      <File Name="../../sys/drv/lcd/lcdframe.h"/>
+      <File Name="../../sys/drv/lcd/lcdrotate.c"/>
+      <File Name="../../sys/drv/lcd/lcdrotate.h"/>
+      <File Name="../../sys/drv/lcd/lcdstruct.h"/>
+      <File Name="../../sys/drv/lcd/picCombine.c"/>
+      <File Name="../../sys/drv/lcd/uiDraw.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="rtc">
+      <File Name="../../sys/drv/rtc/rtc.c"/>
+      <File Name="../../sys/drv/rtc/rtc.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="sensor">
+      <File Name="../../sys/drv/sensor/cmos_sensor.c"/>
+      <File Name="../../sys/drv/sensor/cmos_sensor.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="usbHost">
+      <File Name="../../sys/drv/usb_host/usensor.c"/>
+      <File Name="../../sys/drv/usb_host/usensor.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="usb_dev">
+      <File Name="../../sys/drv/usb_dev/hal_usb_api.c"/>
+      <File Name="../../sys/drv/usb_dev/hal_usb_api.h"/>
+      <File Name="../../sys/drv/usb_dev/hal_usb_dev_enum.c"/>
+      <File Name="../../sys/drv/usb_dev/hal_usb_dev_enum.h"/>
+      <File Name="../../sys/drv/usb_dev/hal_usb_msc.c"/>
+      <File Name="../../sys/drv/usb_dev/hal_usb_msc.h"/>
+      <File Name="../../sys/drv/usb_dev/hal_usb_uac.c"/>
+      <File Name="../../sys/drv/usb_dev/hal_usb_uac.h"/>
+      <File Name="../../sys/drv/usb_dev/hal_usb_uvc.c"/>
+      <File Name="../../sys/drv/usb_dev/hal_usb_uvc.h"/>
+      <File Name="../../sys/drv/usb_dev/usb_dev.c"/>
+      <File Name="../../sys/drv/usb_dev/usb_dev.h"/>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <Description/>
+  <Dependencies/>
+  <VirtualDirectory Name="auadc">
+    <File Name="../../sys/auadc/auadc.c"/>
+    <File Name="../../sys/auadc/auadc.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="cjson">
+    <File Name="../../sys/cjson/cJSON.c"/>
+    <File Name="../../sys/cjson/cJSON.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="config">
+    <File Name="../../sys/config/conf_parse.c"/>
+    <File Name="../../sys/config/conf_parse.h"/>
+    <File Name="../../sys/config/conf_scan.c"/>
+    <File Name="../../sys/config/flexint.h"/>
+    <File Name="../../sys/config/scan.c"/>
+    <File Name="../../sys/config/scan1.c"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="eloop">
+    <File Name="../../sys/eloop/eloop.c"/>
+    <File Name="../../sys/eloop/eloop.h"/>
+    <File Name="../../sys/eloop/irqTimer.c"/>
+    <File Name="../../sys/eloop/irqTimer.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="eventTimer">
+    <File Name="../../sys/eventTimer/eventTimer.c"/>
+    <File Name="../../sys/eventTimer/eventTimer.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="fly">
+    <File Name="../../sys/fly/fly.c"/>
+    <File Name="../../sys/fly/fly.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="ftp">
+    <File Name="../../sys/ftp/ftp-fs.c"/>
+    <File Name="../../sys/ftp/ftp-fs.h"/>
+    <File Name="../../sys/ftp/ftp.c"/>
+    <File Name="../../sys/ftp/ftp.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="hal_watermark">
+    <File Name="../../sys/hal_watermark/ascii.c"/>
+    <File Name="../../sys/hal_watermark/ascii.h"/>
+    <File Name="../../sys/hal_watermark/ascii_default.c"/>
+    <File Name="../../sys/hal_watermark/ascii_default.h"/>
+    <File Name="../../sys/hal_watermark/ascii_default_draw.c"/>
+    <File Name="../../sys/hal_watermark/ascii_num2.c"/>
+    <File Name="../../sys/hal_watermark/ascii_num2.h"/>
+    <File Name="../../sys/hal_watermark/ascii_num2_draw.c"/>
+    <File Name="../../sys/hal_watermark/ascii_num3.c"/>
+    <File Name="../../sys/hal_watermark/ascii_num3.h"/>
+    <File Name="../../sys/hal_watermark/ascii_num3_draw.c"/>
+    <File Name="../../sys/hal_watermark/ascii_num4.c"/>
+    <File Name="../../sys/hal_watermark/ascii_num4.h"/>
+    <File Name="../../sys/hal_watermark/ascii_num4_draw.c"/>
+    <File Name="../../sys/hal_watermark/ascii_num5.c"/>
+    <File Name="../../sys/hal_watermark/ascii_num5.h"/>
+    <File Name="../../sys/hal_watermark/ascii_num5_draw.c"/>
+    <File Name="../../sys/hal_watermark/hal_watermark.c"/>
+    <File Name="../../sys/hal_watermark/hal_watermark.h"/>
+    <File Name="../../sys/hal_watermark/watermark_stream.c"/>
+    <File Name="../../sys/hal_watermark/watermark_stream.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="http">
+    <File Name="../../sys/http/http.c"/>
+    <File Name="../../sys/http/http.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="mac_fd">
+    <File Name="../../sys/mac_fd/mac_fd.c"/>
+    <File Name="../../sys/mac_fd/mac_fd.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="mediaFile">
+    <File Name="../../sys/mediaFile/playVideo.c"/>
+    <File Name="../../sys/mediaFile/record.c"/>
+    <File Name="../../sys/mediaFile/playNet.c"/>
+    <File Name="../../sys/mediaFile/readFile.c"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="printf">
+    <File Name="../../sys/printf/printf.c"/>
+    <File Name="../../sys/printf/vsprintf.c"/>
+    <File Name="../../sys/printf/vsscanf.c"/>
+    <File Name="../../sys/printf/log.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="resfs">
+    <File Name="../../sys/resfs/resfs.c"/>
+    <File Name="../../sys/resfs/sys-id-.h"/>
+    <File Name="../../sys/resfs/sys-id.h"/>
+    <File Name="../../sys/resfs/sysid-.h"/>
+    <File Name="../../sys/resfs/sysid.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="rtp-media">
+    <File Name="../../sys/rtp-media/jpeg.h"/>
+    <File Name="../../sys/rtp-media/rtp-audio.c"/>
+    <File Name="../../sys/rtp-media/rtp-jpeg.c"/>
+    <File Name="../../sys/rtp-media/rtp-user-jpeg.c"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="sUI">
+    <File Name="../../sys/sUI/button.c"/>
+    <File Name="../../sys/sUI/button.h"/>
+    <File Name="../../sys/sUI/debug.h"/>
+    <File Name="../../sys/sUI/dialog.c"/>
+    <File Name="../../sys/sUI/dialog.h"/>
+    <File Name="../../sys/sUI/frameWin.c"/>
+    <File Name="../../sys/sUI/frameWin.h"/>
+    <File Name="../../sys/sUI/imageIcon.c"/>
+    <File Name="../../sys/sUI/imageIcon.h"/>
+    <File Name="../../sys/sUI/itemManage.c"/>
+    <File Name="../../sys/sUI/itemManage.h"/>
+    <File Name="../../sys/sUI/memPool.c"/>
+    <File Name="../../sys/sUI/memPool.h"/>
+    <File Name="../../sys/sUI/menuItem.c"/>
+    <File Name="../../sys/sUI/menuItem.h"/>
+    <File Name="../../sys/sUI/menuItemEx.c"/>
+    <File Name="../../sys/sUI/menuItemEx.h"/>
+    <File Name="../../sys/sUI/menuOption.c"/>
+    <File Name="../../sys/sUI/menuOption.h"/>
+    <File Name="../../sys/sUI/mType.h"/>
+    <File Name="../../sys/sUI/progressBar.c"/>
+    <File Name="../../sys/sUI/progressBar.h"/>
+    <File Name="../../sys/sUI/rect.c"/>
+    <File Name="../../sys/sUI/rect.h"/>
+    <File Name="../../sys/sUI/stringIcon.c"/>
+    <File Name="../../sys/sUI/stringIcon.h"/>
+    <File Name="../../sys/sUI/sUI.h"/>
+    <File Name="../../sys/sUI/tips.c"/>
+    <File Name="../../sys/sUI/tips.h"/>
+    <File Name="../../sys/sUI/uiAlloc.c"/>
+    <File Name="../../sys/sUI/uiAlloc.h"/>
+    <File Name="../../sys/sUI/userDef.h"/>
+    <File Name="../../sys/sUI/widget.c"/>
+    <File Name="../../sys/sUI/widget.h"/>
+    <File Name="../../sys/sUI/widgetManage.c"/>
+    <File Name="../../sys/sUI/widgetManage.h"/>
+    <File Name="../../sys/sUI/winManage.c"/>
+    <File Name="../../sys/sUI/winManage.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="spi">
+    <File Name="../../sys/spi/spi.c"/>
+    <File Name="../../sys/spi/spi.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="streamMalloc">
+    <File Name="../../sys/streamMalloc/stream_malloc.c"/>
+    <File Name="../../sys/streamMalloc/stream_malloc.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="sysCommon">
+    <File Name="../../sys/sysCommon/commonInclude.h"/>
+    <File Name="../../sys/sysCommon/sysCommonEnum.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="systemSetting">
+    <File Name="../../sys/systemSetting/sysCommon.h"/>
+    <File Name="../../sys/systemSetting/systemSetting.c"/>
+    <File Name="../../sys/systemSetting/systemSetting.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="tcpControl">
+    <File Name="../../sys/tcpControl/setJSON.c"/>
+    <File Name="../../sys/tcpControl/setJSON.h"/>
+    <File Name="../../sys/tcpControl/tcpControl.c"/>
+    <File Name="../../sys/tcpControl/tcpControl.h"/>
+    <File Name="../../sys/tcpControl/tcpMessage.c"/>
+    <File Name="../../sys/tcpControl/tcpMessage.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="tcphlpr">
+    <File Name="../../sys/tcphlpr/pmsg.c"/>
+    <File Name="../../sys/tcphlpr/pmsg.h"/>
+    <File Name="../../sys/tcphlpr/tcphlpr.c"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="udhcp-0.9.8">
+    <File Name="../../sys/udhcp-0.9.8/clientpacket.h"/>
+    <File Name="../../sys/udhcp-0.9.8/dhcpc.h"/>
+    <File Name="../../sys/udhcp-0.9.8/dhcpd.c"/>
+    <File Name="../../sys/udhcp-0.9.8/dhcpd.h"/>
+    <File Name="../../sys/udhcp-0.9.8/dhcp_debug.h"/>
+    <File Name="../../sys/udhcp-0.9.8/leases.c"/>
+    <File Name="../../sys/udhcp-0.9.8/leases.h"/>
+    <File Name="../../sys/udhcp-0.9.8/libbb_udhcp.h"/>
+    <File Name="../../sys/udhcp-0.9.8/options.c"/>
+    <File Name="../../sys/udhcp-0.9.8/options.h"/>
+    <File Name="../../sys/udhcp-0.9.8/packet.c"/>
+    <File Name="../../sys/udhcp-0.9.8/packet.h"/>
+    <File Name="../../sys/udhcp-0.9.8/serverpacket.c"/>
+    <File Name="../../sys/udhcp-0.9.8/serverpacket.h"/>
+    <File Name="../../sys/udhcp-0.9.8/socket.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="udptest">
+    <File Name="../../sys/udptest/udptest.c"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="uthash">
+    <File Name="../../sys/uthash/utarray.h"/>
+    <File Name="../../sys/uthash/uthash.h"/>
+    <File Name="../../sys/uthash/utlist.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="fatfs">
+    <File Name="../../sys/fatfs/fileManage.c"/>
+    <File Name="../../sys/fatfs/fileOps.c"/>
+    <File Name="../../sys/fatfs/fileOps.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="appcmd">
+    <File Name="../../sys/appcmd/socket_cmd.c"/>
+    <File Name="../../sys/appcmd/socket_cmd.h"/>
+    <File Name="../../sys/appcmd/socket_cmdEx.c"/>
+    <File Name="../../sys/appcmd/socket_cmd_wifi.c"/>
+    <File Name="../../sys/appcmd/socket_cmd_wifi.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="printer">
+    <File Name="../../sys/printer/printer.c"/>
+    <File Name="../../sys/printer/printerpic.c"/>
+  </VirtualDirectory>
+  <Dependencies Name="Debug"/>
+  <VirtualDirectory Name="unifont">
+    <File Name="../../sys/unifont/ebook.h"/>
+    <File Name="../../sys/unifont/ebook_font.c"/>
+    <File Name="../../sys/unifont/ebook_font.h"/>
+    <File Name="../../sys/unifont/ebook_port.c"/>
+    <File Name="../../sys/unifont/ebook_type.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="iperf2">
+    <File Name="../../sys/iperf2/iperf2.c"/>
+    <File Name="../../sys/iperf2/iperf2.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="zbar">
+    <File Name="../../sys/zbar/zbar_identify.c"/>
+    <VirtualDirectory Name="zbar">
+      <VirtualDirectory Name="inc">
+        <File Name="../../sys/zbar/zbar/inc/decoder.h"/>
+        <File Name="../../sys/zbar/zbar/inc/error.h"/>
+        <File Name="../../sys/zbar/zbar/inc/image.h"/>
+        <File Name="../../sys/zbar/zbar/inc/img_scanner.h"/>
+        <File Name="../../sys/zbar/zbar/inc/platform_if.h"/>
+        <File Name="../../sys/zbar/zbar/inc/processor.h"/>
+        <File Name="../../sys/zbar/zbar/inc/qrcode.h"/>
+        <File Name="../../sys/zbar/zbar/inc/refcnt.h"/>
+        <File Name="../../sys/zbar/zbar/inc/svg.h"/>
+        <File Name="../../sys/zbar/zbar/inc/symbol.h"/>
+        <File Name="../../sys/zbar/zbar/inc/zbar.h"/>
+        <File Name="../../sys/zbar/zbar/inc/zbar_cfg.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="src">
+        <VirtualDirectory Name="decoder">
+          <File Name="../../sys/zbar/zbar/src/decoder/code128.c"/>
+          <File Name="../../sys/zbar/zbar/src/decoder/code128.h"/>
+          <File Name="../../sys/zbar/zbar/src/decoder/code39.c"/>
+          <File Name="../../sys/zbar/zbar/src/decoder/code39.h"/>
+          <File Name="../../sys/zbar/zbar/src/decoder/ean.c"/>
+          <File Name="../../sys/zbar/zbar/src/decoder/ean.h"/>
+          <File Name="../../sys/zbar/zbar/src/decoder/i25.c"/>
+          <File Name="../../sys/zbar/zbar/src/decoder/i25.h"/>
+          <File Name="../../sys/zbar/zbar/src/decoder/pdf417.c"/>
+          <File Name="../../sys/zbar/zbar/src/decoder/pdf417.h"/>
+          <File Name="../../sys/zbar/zbar/src/decoder/pdf417_hash.h"/>
+          <File Name="../../sys/zbar/zbar/src/decoder/qr_finder.c"/>
+          <File Name="../../sys/zbar/zbar/src/decoder/qr_finder.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="qrcode">
+          <File Name="../../sys/zbar/zbar/src/qrcode/bch15_5.c"/>
+          <File Name="../../sys/zbar/zbar/src/qrcode/bch15_5.h"/>
+          <File Name="../../sys/zbar/zbar/src/qrcode/binarize.c"/>
+          <File Name="../../sys/zbar/zbar/src/qrcode/binarize.h"/>
+          <File Name="../../sys/zbar/zbar/src/qrcode/isaac.c"/>
+          <File Name="../../sys/zbar/zbar/src/qrcode/isaac.h"/>
+          <File Name="../../sys/zbar/zbar/src/qrcode/qrdec.c"/>
+          <File Name="../../sys/zbar/zbar/src/qrcode/qrdec.h"/>
+          <File Name="../../sys/zbar/zbar/src/qrcode/qrdectxt.c"/>
+          <File Name="../../sys/zbar/zbar/src/qrcode/rs.c"/>
+          <File Name="../../sys/zbar/zbar/src/qrcode/rs.h"/>
+          <File Name="../../sys/zbar/zbar/src/qrcode/util.c"/>
+          <File Name="../../sys/zbar/zbar/src/qrcode/util.h"/>
+        </VirtualDirectory>
+        <File Name="../../sys/zbar/zbar/src/error.c"/>
+        <File Name="../../sys/zbar/zbar/src/image.c"/>
+        <File Name="../../sys/zbar/zbar/src/img_scanner.c"/>
+        <File Name="../../sys/zbar/zbar/src/platform_if.c"/>
+        <File Name="../../sys/zbar/zbar/src/processor.c"/>
+        <File Name="../../sys/zbar/zbar/src/refcnt.c"/>
+        <File Name="../../sys/zbar/zbar/src/scanner.c"/>
+        <File Name="../../sys/zbar/zbar/src/svg.c"/>
+        <File Name="../../sys/zbar/zbar/src/symbol.c"/>
+        <File Name="../../sys/zbar/zbar/src/zbar_decoder.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="iconv">
+        <VirtualDirectory Name="inc">
+          <File Name="../../sys/zbar/zbar/iconv/inc/iconv.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/inc/iconv_cfg.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/inc/localcharset.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="src">
+          <File Name="../../sys/zbar/zbar/iconv/src/aliases.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/aliases2.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/aliases_aix.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/aliases_dos.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/aliases_extra.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/aliases_osf1.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/armscii_8.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/ascii.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/big5.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/big5hkscs.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/c99.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/ces_big5.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/ces_gbk.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cjk_variants.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cns11643.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cns11643_1.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cns11643_15.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cns11643_2.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cns11643_3.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cns11643_4.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cns11643_4a.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cns11643_4b.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cns11643_5.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cns11643_6.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cns11643_7.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cns11643_inv.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/converters.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp1046.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp1124.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp1125.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp1129.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp1133.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp1161.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp1162.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp1163.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp1250.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp1251.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp1252.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp1253.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp1254.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp1255.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp1256.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp1257.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp1258.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp437.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp737.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp775.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp850.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp852.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp853.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp855.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp856.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp857.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp858.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp860.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp861.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp862.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp863.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp864.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp865.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp866.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp869.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp874.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp922.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp932.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp932ext.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp936ext.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp943.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp949.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp950.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/cp950ext.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/dec_hanyu.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/dec_kanji.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/euc_cn.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/euc_jisx0213.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/euc_jp.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/euc_kr.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/euc_tw.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/flags.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/flushwc.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/gb12345.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/gb12345ext.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/gb18030.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/gb18030ext.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/gb18030uni.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/gb2312.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/gbk.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/gbkext1.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/gbkext2.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/gbkext_inv.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/genaliases.c"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/genaliases2.c"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/genflags.c"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/gentranslit.c"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/georgian_academy.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/georgian_ps.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/hkscs.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/hp_roman8.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/hz.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iconv.c"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iso2022_cn.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iso2022_cnext.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iso2022_jp.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iso2022_jp1.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iso2022_jp2.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iso2022_jp3.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iso2022_kr.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iso646_cn.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iso646_jp.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iso8859_1.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iso8859_10.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iso8859_13.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iso8859_14.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iso8859_15.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iso8859_16.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iso8859_2.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iso8859_3.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iso8859_4.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iso8859_5.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iso8859_6.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iso8859_7.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iso8859_8.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/iso8859_9.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/isoir165.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/isoir165ext.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/java.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/jisx0201.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/jisx0208.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/jisx0212.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/jisx0213.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/johab.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/johab_hangul.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/koi8_r.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/koi8_ru.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/koi8_t.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/koi8_u.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/ksc5601.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/localcharset.c"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/loops.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/loop_unicode.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/loop_wchar.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/mac_arabic.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/mac_centraleurope.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/mac_croatian.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/mac_cyrillic.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/mac_greek.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/mac_hebrew.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/mac_iceland.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/mac_roman.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/mac_romania.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/mac_thai.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/mac_turkish.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/mac_ukraine.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/mulelao.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/nextstep.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/relocatable.c"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/relocatable.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/riscos1.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/shift_jisx0213.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/sjis.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/tcvn.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/tds565.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/tis620.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/translit.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/ucs2.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/ucs2be.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/ucs2internal.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/ucs2le.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/ucs2swapped.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/ucs4.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/ucs4be.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/ucs4internal.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/ucs4le.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/ucs4swapped.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/uhc_1.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/uhc_2.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/utf16.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/utf16be.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/utf16le.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/utf32.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/utf32be.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/utf32le.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/utf7.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/utf8.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/vietcomb.h"/>
+          <File Name="../../sys/zbar/zbar/iconv/src/viscii.h"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <Settings Type="Static Library">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="ap32" DebuggerType="GNU gdb debugger" Type="Static Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g;-Os;-Wall" C_Options="-g;-Os;-Wall;-mhard-div;-ffunction-sections;-fdata-sections;-lm" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="../../lib"/>
+        <IncludePath Value="../../lib/drv"/>
+        <IncludePath Value="../../sys"/>
+        <IncludePath Value="../../inc"/>
+        <IncludePath Value="../../os/lwip/2.0.2/include"/>
+        <IncludePath Value="../../os/lwip/ports/AX3292"/>
+        <IncludePath Value="../../os/freeRTOS/inc"/>
+        <IncludePath Value="../../os/freeRTOS/osal"/>
+        <IncludePath Value="../../os/freeRTOS/ports/AX3292"/>
+        <IncludePath Value="../../arch/AX3292"/>
+        <IncludePath Value="../../arch/"/>
+        <IncludePath Value="../../arch/AX3292/hal/inc"/>
+        <IncludePath Value="../../arch/AX3292/ax32xx/inc"/>
+        <IncludePath Value="../../sys/drv"/>
+        <IncludePath Value="../../board/AX3292/mvl8801"/>
+        <IncludePath Value="../../demo/helloftv"/>
+        <IncludePath Value="../../demo/helloftv/res"/>
+        <IncludePath Value="../../arch/AX3292/inc/asm"/>
+        <IncludePath Value="../../sys/unifont"/>
+        <IncludePath Value="../../inc/osal"/>
+        <Preprocessor Value="DEBUG="/>
+      </Compiler>
+      <Linker Options="" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="../lib$(ProjectName).a" IntermediateDirectory="./Debug" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+  <VirtualDirectory Name="btcom">
+    <File Name="../../sys/btcom/btcom_user.c"/>
+    <File Name="../../sys/btcom/btcom_user.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="finsh">
+    <File Name="../../sys/finsh/finsh.h"/>
+    <File Name="../../sys/finsh/msh.c"/>
+    <File Name="../../sys/finsh/msh.h"/>
+    <File Name="../../sys/finsh/shell.c"/>
+    <File Name="../../sys/finsh/shell.h"/>
+  </VirtualDirectory>
+  <Dependencies Name="Debug"/>
+</CodeLite_Project>

@@ -1,0 +1,26 @@
+# The file will be copy to the sys-disk with the firmware
+# One can config many things
+
+################################################## display
+
+Display lcd {
+  Input       2;
+  Output     "disp-lcd";
+}
+
+Update gui {
+  Output     "update-gui";
+}
+
+
+sd update {
+  Output     "sd-update";
+}
+
+# NOTE:
+# 1. all command should be end with a ';'!
+# 2. string can be quoted with a pair of '"', but a simple string can omit the '"',
+*    for example the simple file name : Config.dat
+# 3. digit number can be decimal or hexadecimal
+# 4. the command is case-insensitive
+

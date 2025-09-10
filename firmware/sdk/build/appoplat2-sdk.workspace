@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="appoplat2-sdk" Database="" Version="10.0.0">
+  <Project Name="_build-appoplat2-sdk" Path="_build-appoplat2-sdk.project" Active="No"/>
+  <Project Name="AX3292-bootfat32" Path="../AX3292/AX3292-bootfat32.project" Active="No"/>
+  <Project Name="AX3292-lwip" Path="../AX3292/AX3292-lwip.project" Active="No"/>
+  <Project Name="AX3292-mcu" Path="../AX3292/AX3292-mcu.project" Active="No"/>
+  <Project Name="AX3292-os" Path="../AX3292/AX3292-os.project" Active="No"/>
+  <Project Name="AX3292-rtl8189ftv" Path="../AX3292/AX3292-rtl8189ftv.project" Active="No"/>
+  <Project Name="AX3292-sdrtune" Path="../AX3292/AX3292-sdrtune.project" Active="No"/>
+  <Project Name="AX3292-unzip" Path="../AX3292/AX3292-unzip.project" Active="No"/>
+  <Project Name="AX3292-sv6030" Path="../AX3292/AX3292-sv6030.project" Active="No"/>
+  <Project Name="AX3292-sys-sv6030" Path="../AX3292/AX3292-sys-sv6030.project" Active="No"/>
+  <Project Name="_build-appoplat2-sdk-6030" Path="_build-appoplat2-sdk-6030.project" Active="No"/>
+  <Project Name="_build-appoplat-atbm" Path="_build-appoplat-atbm.project" Active="Yes"/>
+  <Project Name="AX3292-sys-sv6152" Path="../AX3292/AX3292-sys-sv6152.project" Active="No"/>
+  <Project Name="AX3292-sv6152" Path="../AX3292/AX3292-sv6152.project" Active="No"/>
+  <Project Name="_build-appoplat2-sdk-6152" Path="_build-appoplat2-sdk-6152.project" Active="No"/>
+  <Project Name="AX3292-ssv6158" Path="../AX3292/AX3292-ssv6158.project" Active="No"/>
+  <Project Name="_build-appoplat2-sdk-6158" Path="_build-appoplat2-sdk-6158.project" Active="No"/>
+  <Project Name="AX3292-lib14" Path="../AX3292/AX3292-lib14.project" Active="No"/>
+  <Project Name="AX3292-lib20" Path="../AX3292/AX3292-lib20.project" Active="No"/>
+  <Project Name="AX3292-libex" Path="../AX3292/AX3292-libex.project" Active="No"/>
+  <Project Name="AX3292-sys-sv6158" Path="../AX3292/AX3292-sys-sv6158.project" Active="No"/>
+  <Project Name="AX3292_atbm6031" Path="../AX3292/AX3292_atbm6031.project" Active="No"/>
+  <Project Name="AX3292-sys" Path="../AX3292/AX3292-sys.project" Active="No"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Project Name="AX3268-os" ConfigName="Debug"/>
+      <Project Name="AX3278-os" ConfigName="Debug"/>
+      <Project Name="_build-appoplat2-sdk" ConfigName="Debug"/>
+      <Project Name="AX3278-unzip" ConfigName="Debug"/>
+      <Project Name="AX3268-unzip" ConfigName="Debug"/>
+      <Project Name="AX3268-mcu" ConfigName="Debug"/>
+      <Project Name="AX3278-mcu" ConfigName="Debug"/>
+      <Project Name="AX3278-sys" ConfigName="Debug"/>
+      <Project Name="AX3268-bootfat32" ConfigName="Debug"/>
+      <Project Name="AX3278-bootfat32" ConfigName="Debug"/>
+      <Project Name="AX3278-sdrtune" ConfigName="Debug"/>
+      <Project Name="AX3268-sdrtune" ConfigName="Debug"/>
+      <Project Name="AX3268-lwip" ConfigName="Debug"/>
+      <Project Name="AX3278-lwip" ConfigName="Debug"/>
+      <Project Name="AX3268-sys" ConfigName="Debug"/>
+      <Project Name="AX3268-rtl8189ftv" ConfigName="Debug"/>
+      <Project Name="mingw-os" ConfigName="Debug"/>
+      <Project Name="mingw-sys" ConfigName="Debug"/>
+      <Project Name="AX3281-bootfat32" ConfigName="Debug"/>
+      <Project Name="AX3281-unzip" ConfigName="Debug"/>
+      <Project Name="AX3281-sys" ConfigName="Debug"/>
+      <Project Name="AX3281-sdrtune" ConfigName="Debug"/>
+      <Project Name="AX3281-os" ConfigName="Debug"/>
+      <Project Name="AX3281-lwip" ConfigName="Debug"/>
+      <Project Name="AX3281-mcu" ConfigName="Debug"/>
+      <Project Name="AX3281-rtl8189ftv" ConfigName="Debug"/>
+      <Project Name="mingw-mcu" ConfigName="Debug"/>
+      <Project Name="AX3292-bootfat32" ConfigName="Debug"/>
+      <Project Name="AX3292-lwip" ConfigName="Debug"/>
+      <Project Name="AX3292-mcu" ConfigName="Debug"/>
+      <Project Name="AX3292-os" ConfigName="Debug"/>
+      <Project Name="AX3292-rtl8189ftv" ConfigName="Debug"/>
+      <Project Name="AX3292-sdrtune" ConfigName="Debug"/>
+      <Project Name="AX3292-unzip" ConfigName="Debug"/>
+      <Project Name="AX3292-sv6030" ConfigName="Debug"/>
+      <Project Name="AX3292-sys-sv6030" ConfigName="Debug"/>
+      <Project Name="_build-appoplat2-sdk-6030" ConfigName="Debug"/>
+      <Project Name="AX3292_6011" ConfigName="Debug"/>
+      <Project Name="_build-appoplat-atbm" ConfigName="Debug"/>
+      <Project Name="AX3292_6011" ConfigName="Debug"/>
+      <Project Name="AX3292-sys-sv6152" ConfigName="Debug"/>
+      <Project Name="AX3292-sv6152" ConfigName="Debug"/>
+      <Project Name="_build-appoplat2-sdk-6152" ConfigName="Debug"/>
+      <Project Name="AX3292-ssv6158" ConfigName="Debug"/>
+      <Project Name="_build-appoplat2-sdk-6158" ConfigName="Debug"/>
+      <Project Name="AX3292-lib14" ConfigName="Debug"/>
+      <Project Name="AX3292-lib14" ConfigName="Debug"/>
+      <Project Name="AX3292-lib20" ConfigName="Debug"/>
+      <Project Name="AX3292-libex" ConfigName="Debug"/>
+      <Project Name="AX3292-sys-sv6158" ConfigName="Debug"/>
+      <Project Name="AX3292_atbm6031" ConfigName="Debug"/>
+      <Project Name="AX3292-sys" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Project Name="AX3268-os" ConfigName="Release"/>
+      <Project Name="AX3278-os" ConfigName="Release"/>
+      <Project Name="_build-appoplat2-sdk" ConfigName="Release"/>
+      <Project Name="AX3278-unzip" ConfigName="Release"/>
+      <Project Name="AX3268-unzip" ConfigName="Release"/>
+      <Project Name="AX3268-mcu" ConfigName="Release"/>
+      <Project Name="AX3278-mcu" ConfigName="Release"/>
+      <Project Name="AX3278-sys" ConfigName="Release"/>
+      <Project Name="AX3268-bootfat32" ConfigName="Release"/>
+      <Project Name="AX3278-bootfat32" ConfigName="Release"/>
+      <Project Name="AX3278-sdrtune" ConfigName="Release"/>
+      <Project Name="AX3268-sdrtune" ConfigName="Release"/>
+      <Project Name="AX3268-lwip" ConfigName="Release"/>
+      <Project Name="AX3278-lwip" ConfigName="Release"/>
+      <Project Name="AX3268-sys" ConfigName="Release"/>
+      <Project Name="AX3268-rtl8189ftv" ConfigName="Release"/>
+      <Project Name="mingw-os" ConfigName="Release"/>
+      <Project Name="mingw-sys" ConfigName="Release"/>
+      <Project Name="AX3281-bootfat32" ConfigName="Release"/>
+      <Project Name="AX3281-unzip" ConfigName="Release"/>
+      <Project Name="AX3281-sys" ConfigName="Release"/>
+      <Project Name="AX3281-sdrtune" ConfigName="Release"/>
+      <Project Name="AX3281-os" ConfigName="Release"/>
+      <Project Name="AX3281-lwip" ConfigName="Release"/>
+      <Project Name="AX3281-mcu" ConfigName="Release"/>
+      <Project Name="AX3281-rtl8189ftv" ConfigName="Release"/>
+      <Project Name="mingw-mcu" ConfigName="Release"/>
+      <Project Name="AX3292-bootfat32" ConfigName="Debug"/>
+      <Project Name="AX3292-lwip" ConfigName="Debug"/>
+      <Project Name="AX3292-mcu" ConfigName="Debug"/>
+      <Project Name="AX3292-os" ConfigName="Debug"/>
+      <Project Name="AX3292-rtl8189ftv" ConfigName="Debug"/>
+      <Project Name="AX3292-sdrtune" ConfigName="Debug"/>
+      <Project Name="AX3292-unzip" ConfigName="Debug"/>
+      <Project Name="AX3292-sv6030" ConfigName="Debug"/>
+      <Project Name="AX3292-sys-sv6030" ConfigName="Debug"/>
+      <Project Name="_build-appoplat2-sdk-6030" ConfigName="Debug"/>
+      <Project Name="AX3292_6011" ConfigName="Release"/>
+      <Project Name="_build-appoplat-atbm" ConfigName="Debug"/>
+      <Project Name="AX3292_6011" ConfigName="Release"/>
+      <Project Name="AX3292-sys-sv6152" ConfigName="Debug"/>
+      <Project Name="AX3292-sv6152" ConfigName="Debug"/>
+      <Project Name="_build-appoplat2-sdk-6152" ConfigName="Debug"/>
+      <Project Name="AX3292-ssv6158" ConfigName="Release"/>
+      <Project Name="_build-appoplat2-sdk-6158" ConfigName="Debug"/>
+      <Project Name="AX3292-lib14" ConfigName="Release"/>
+      <Project Name="AX3292-lib14" ConfigName="Release"/>
+      <Project Name="AX3292-lib20" ConfigName="Release"/>
+      <Project Name="AX3292-libex" ConfigName="Release"/>
+      <Project Name="AX3292-sys-sv6158" ConfigName="Debug"/>
+      <Project Name="AX3292_atbm6031" ConfigName="Release"/>
+      <Project Name="AX3292-sys" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>

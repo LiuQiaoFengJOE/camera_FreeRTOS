@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="AX3292_atbm6031" InternalType="Library">
+  <Plugins>
+    <Plugin Name="qmake">
+      <![CDATA[00010001N0005Debug000000000000]]>
+    </Plugin>
+    <Plugin Name="CMakePlugin">
+      <![CDATA[[{
+  "name": "Debug",
+  "enabled": false,
+  "buildDirectory": "build",
+  "sourceDirectory": "$(ProjectPath)",
+  "generator": "",
+  "buildType": "",
+  "arguments": [],
+  "parentProject": ""
+ }]]]>
+    </Plugin>
+  </Plugins>
+  <Description/>
+  <Dependencies/>
+  <VirtualDirectory Name="api">
+    <File Name="../../net/atbm/api/atbm_api.c"/>
+    <File Name="../../net/atbm/api/atbm_api.h"/>
+    <File Name="../../net/atbm/api/atbm_wifi_driver_api.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="hal">
+    <VirtualDirectory Name="include">
+      <File Name="../../net/atbm/hal/include/atbm_debug.h"/>
+      <File Name="../../net/atbm/hal/include/atbm_etf.h"/>
+      <File Name="../../net/atbm/hal/include/atbm_hal.h"/>
+      <File Name="../../net/atbm/hal/include/atbm_lock.h"/>
+      <File Name="../../net/atbm/hal/include/atbm_queue.h"/>
+      <File Name="../../net/atbm/hal/include/atbm_sbus.h"/>
+      <File Name="../../net/atbm/hal/include/atbm_skbuf.h"/>
+      <File Name="../../net/atbm/hal/include/atbm_smartconfig.h"/>
+      <File Name="../../net/atbm/hal/include/atbm_task.h"/>
+      <File Name="../../net/atbm/hal/include/atbm_wsm.h"/>
+      <File Name="../../net/atbm/hal/include/firmware_athenaB.h"/>
+      <File Name="../../net/atbm/hal/include/firmware_athenaB_notxconfirm.h"/>
+      <File Name="../../net/atbm/hal/include/firmware_athenaB_sdio.h"/>
+      <File Name="../../net/atbm/hal/include/firmware_athenaB_sdio_.h"/>
+      <File Name="../../net/atbm/hal/include/firmware_athenaB_sdio_notxconfirm.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="sdio">
+      <File Name="../../net/atbm/hal/sdio/atbm_dcxo_dpll.h"/>
+      <File Name="../../net/atbm/hal/sdio/atbm_sdio.h"/>
+      <File Name="../../net/atbm/hal/sdio/atbm_sdio_bh.h"/>
+      <File Name="../../net/atbm/hal/sdio/atbm_sdio_fwio.h"/>
+      <File Name="../../net/atbm/hal/sdio/atbm_sdio_hwio.h"/>
+      <File Name="../../net/atbm/hal/sdio/atbm_dcxo_dpll.c"/>
+      <File Name="../../net/atbm/hal/sdio/atbm_sdio.c"/>
+      <File Name="../../net/atbm/hal/sdio/atbm_sdio_bh.c"/>
+      <File Name="../../net/atbm/hal/sdio/atbm_sdio_fwio.c"/>
+      <File Name="../../net/atbm/hal/sdio/atbm_sdio_hwio.c"/>
+    </VirtualDirectory>
+    <File Name="../../net/atbm/hal/atbm_ap.c"/>
+    <File Name="../../net/atbm/hal/atbm_config.c"/>
+    <File Name="../../net/atbm/hal/atbm_etf.c"/>
+    <File Name="../../net/atbm/hal/atbm_init.c"/>
+    <File Name="../../net/atbm/hal/atbm_main.c"/>
+    <File Name="../../net/atbm/hal/atbm_queue.c"/>
+    <File Name="../../net/atbm/hal/atbm_skbuf.c"/>
+    <File Name="../../net/atbm/hal/atbm_sta.c"/>
+    <File Name="../../net/atbm/hal/atbm_task.c"/>
+    <File Name="../../net/atbm/hal/atbm_txrx.c"/>
+    <File Name="../../net/atbm/hal/atbm_wifi_driver_api.c"/>
+    <File Name="../../net/atbm/hal/atbm_wsm.c"/>
+    <File Name="../../net/atbm/hal/smartconfig.c"/>
+    <File Name="../../net/atbm/hal/atbm_phy_reg.c"/>
+    <File Name="../../net/atbm/hal/atbm_thread.c"/>
+    <File Name="../../net/atbm/hal/atbm_timer.c"/>
+    <VirtualDirectory Name="compress">
+      <File Name="../../net/atbm/hal/compress/compress.c"/>
+      <File Name="../../net/atbm/hal/compress/compress.h"/>
+      <File Name="../../net/atbm/hal/compress/pq.c"/>
+      <File Name="../../net/atbm/hal/compress/pq.h"/>
+    </VirtualDirectory>
+    <File Name="../../net/atbm/hal/atbm_ble.c"/>
+    <File Name="../../net/atbm/hal/atbm_ble_driver_api.c"/>
+    <File Name="../../net/atbm/hal/atbm_special.c"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="net">
+    <VirtualDirectory Name="include">
+      <VirtualDirectory Name="proto">
+        <File Name="../../net/atbm/net/include/proto/atbm_proto.h"/>
+      </VirtualDirectory>
+      <File Name="../../net/atbm/net/include/atbm_key.h"/>
+      <File Name="../../net/atbm/net/include/atbm_mac80211.h"/>
+      <File Name="../../net/atbm/net/include/atbm_mgmt.h"/>
+      <File Name="../../net/atbm/net/include/atbm_ratectrl.h"/>
+      <File Name="../../net/atbm/net/include/atbm_rc80211_minstrel.h"/>
+      <File Name="../../net/atbm/net/include/atbm_rc80211_minstrel_ht.h"/>
+      <File Name="../../net/atbm/net/include/atbm_rc80211_pid.h"/>
+      <File Name="../../net/atbm/net/include/atbm_sha1.h"/>
+      <File Name="../../net/atbm/net/include/hostapd_main.h"/>
+      <File Name="../../net/atbm/net/include/hostapd_sta_info.h"/>
+      <File Name="../../net/atbm/net/include/os_net_type.h"/>
+      <File Name="../../net/atbm/net/include/wpa_auth_i.h"/>
+      <File Name="../../net/atbm/net/include/wpa_common.h"/>
+      <File Name="../../net/atbm/net/include/wpa_i.h"/>
+      <File Name="../../net/atbm/net/include/wpa_main.h"/>
+      <File Name="../../net/atbm/net/include/wpa_supplicant_i.h"/>
+      <File Name="../../net/atbm/net/include/wpa_timer.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="wpa">
+      <File Name="../../net/atbm/net/wpa/aes_core.c"/>
+      <File Name="../../net/atbm/net/wpa/hostapd_main.c"/>
+      <File Name="../../net/atbm/net/wpa/sha1.c"/>
+      <File Name="../../net/atbm/net/wpa/wpa_common.c"/>
+      <File Name="../../net/atbm/net/wpa/wpa_main.c"/>
+      <File Name="../../net/atbm/net/wpa/wpa_debug.c"/>
+      <File Name="../../net/atbm/net/wpa/wpa_event.c"/>
+      <File Name="../../net/atbm/net/wpa/wpabuf.c"/>
+      <VirtualDirectory Name="crypto">
+        <File Name="../../net/atbm/net/wpa/crypto/aes-cbc.c"/>
+        <File Name="../../net/atbm/net/wpa/crypto/base64.c"/>
+        <File Name="../../net/atbm/net/wpa/crypto/bignum.c"/>
+        <File Name="../../net/atbm/net/wpa/crypto/crypto_internal-modexp.c"/>
+        <File Name="../../net/atbm/net/wpa/crypto/dh_group5.c"/>
+        <File Name="../../net/atbm/net/wpa/crypto/dh_groups.c"/>
+        <File Name="../../net/atbm/net/wpa/crypto/sha256.c"/>
+        <File Name="../../net/atbm/net/wpa/crypto/sha256-internal.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="sae">
+        <File Name="../../net/atbm/net/wpa/sae/crypto_mbedlts.c"/>
+        <File Name="../../net/atbm/net/wpa/sae/dragonfly.c"/>
+        <File Name="../../net/atbm/net/wpa/sae/ecp.c"/>
+        <File Name="../../net/atbm/net/wpa/sae/ecp_curves.c"/>
+        <File Name="../../net/atbm/net/wpa/sae/pmksa_cache.c"/>
+        <File Name="../../net/atbm/net/wpa/sae/sae.c"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="wps">
+        <File Name="../../net/atbm/net/wpa/wps/eap_common.c"/>
+        <File Name="../../net/atbm/net/wpa/wps/eap_register.c"/>
+        <File Name="../../net/atbm/net/wpa/wps/eap_server_wsc.c"/>
+        <File Name="../../net/atbm/net/wpa/wps/ieee802_11_common.c"/>
+        <File Name="../../net/atbm/net/wpa/wps/uuid.c"/>
+        <File Name="../../net/atbm/net/wpa/wps/wps_attr_build.c"/>
+        <File Name="../../net/atbm/net/wpa/wps/wps_attr_parse.c"/>
+        <File Name="../../net/atbm/net/wpa/wps/wps_attr_process.c"/>
+        <File Name="../../net/atbm/net/wpa/wps/wps_common.c"/>
+        <File Name="../../net/atbm/net/wpa/wps/wps_dev_attr.c"/>
+        <File Name="../../net/atbm/net/wpa/wps/wps_enrollee.c"/>
+        <File Name="../../net/atbm/net/wpa/wps/wps_hostapd.c"/>
+        <File Name="../../net/atbm/net/wpa/wps/wps_main.c"/>
+        <File Name="../../net/atbm/net/wpa/wps/wps_registrar.c"/>
+        <File Name="../../net/atbm/net/wpa/wps/wps_sta.c"/>
+        <File Name="../../net/atbm/net/wpa/wps/wps_validate.c"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <File Name="../../net/atbm/net/atbm_key.c"/>
+    <File Name="../../net/atbm/net/atbm_mgmt.c"/>
+    <File Name="../../net/atbm/net/atbm_ratectrl.c"/>
+    <File Name="../../net/atbm/net/atbm_rc80211_minstrel.c"/>
+    <File Name="../../net/atbm/net/atbm_rc80211_minstrel_ht.c"/>
+    <File Name="../../net/atbm/net/atbm_rc80211_pid_algo.c"/>
+    <File Name="../../net/atbm/net/atbm_util.c"/>
+    <File Name="../../net/atbm/net/atbm_agg.c"/>
+    <File Name="../../net/atbm/net/atbm_bridge.c"/>
+    <File Name="../../net/atbm/net/atbm_connect.c"/>
+  </VirtualDirectory>
+  <Dependencies Name="Debug"/>
+  <Dependencies Name="Release"/>
+  <VirtualDirectory Name="os">
+    <File Name="../../net/atbm/os/jrx_rtos/atbm_os_api.c"/>
+    <File Name="../../net/atbm/os/jrx_rtos/atbm_os_atomic.c"/>
+    <File Name="../../net/atbm/os/jrx_rtos/atbm_os_mem.c"/>
+    <File Name="../../net/atbm/os/jrx_rtos/atbm_os_mutex.c"/>
+    <File Name="../../net/atbm/os/jrx_rtos/atbm_os_sdio.c"/>
+    <File Name="../../net/atbm/os/jrx_rtos/atbm_os_skbuf.c"/>
+    <File Name="../../net/atbm/os/jrx_rtos/atbm_os_spinlock.c"/>
+    <File Name="../../net/atbm/os/jrx_rtos/atbm_os_thread.c"/>
+    <File Name="../../net/atbm/os/jrx_rtos/atbm_os_timer.c"/>
+    <File Name="../../net/atbm/os/jrx_rtos/atbm_os_msgQ.c"/>
+  </VirtualDirectory>
+  <Settings Type="Static Library">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="ap32" DebuggerType="GNU gdb debugger" Type="Static Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g;-Wall;-Os" C_Options="-g;-Os;-Wall;-fshort-wchar;-Wno-pointer-sign;-Wno-format;-Wno-array-bounds;-Wno-strict-aliasing;-ffunction-sections;-fdata-sections" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+        <IncludePath Value="../../"/>
+        <IncludePath Value="../../lib"/>
+        <IncludePath Value="../../lib/drv"/>
+        <IncludePath Value="./../../inc/osal"/>
+        <IncludePath Value="./../../net/atbm/linux"/>
+        <IncludePath Value="./../../net/atbm/include"/>
+        <IncludePath Value="./../../net/atbm/api"/>
+        <IncludePath Value="./../../net/atbm/hal/include"/>
+        <IncludePath Value="./../../net/atbm/hal/sdio"/>
+        <IncludePath Value="./../../net/atbm/api/sdio"/>
+        <IncludePath Value="./../../net/atbm/net/include"/>
+        <IncludePath Value="./../../net/atbm/net/include/proto"/>
+        <IncludePath Value="./../../net/atbm/net/wpa/crypto/include"/>
+        <IncludePath Value="./../../net/atbm/net/wpa/wps/include"/>
+        <IncludePath Value="./../../net/atbm/net/wpa/sae/include"/>
+        <IncludePath Value="./../../net/atbm/os/jrx_rtos/include"/>
+        <IncludePath Value="./../../net/atbm/os/include"/>
+        <IncludePath Value="../../os/freeRTOS/inc"/>
+        <IncludePath Value="../../os/freeRTOS/ports/AX3292"/>
+        <IncludePath Value="../../os/freeRTOS/osal"/>
+        <IncludePath Value="../../os/freeRTOS"/>
+        <IncludePath Value="../../arch/AX3292"/>
+        <IncludePath Value="../../arch/AX3292/inc"/>
+        <IncludePath Value="../../inc"/>
+        <IncludePath Value="../../inc/net"/>
+        <IncludePath Value="../../os/lwip/2.0.2/include"/>
+        <IncludePath Value="../../os/lwip/ports/AX3292"/>
+        <IncludePath Value="../../os/lwip/2.0.2/include"/>
+        <IncludePath Value="../../os/lwip/2.0.2/include/lwip"/>
+        <IncludePath Value="../../board/AX3292/mvl8801"/>
+        <IncludePath Value="../../os/freeRTOS/ports/AX3292"/>
+        <IncludePath Value="../../os/freeRTOS/common"/>
+        <IncludePath Value="../../sys/drv/mmc/hal"/>
+        <IncludePath Value="../../os/freeRTOS/inc"/>
+        <IncludePath Value="../../os/freeRTOS/ports/AX3292"/>
+        <IncludePath Value="../../os/freeRTOS/osal"/>
+        <IncludePath Value="../../arch/AX3292"/>
+        <IncludePath Value="../../arch/AX3292/inc"/>
+        <IncludePath Value="../../inc"/>
+        <IncludePath Value="../../inc/net"/>
+        <IncludePath Value="../../os/lwip/2.0.2/include"/>
+        <IncludePath Value="../../os/lwip/ports/AX3292"/>
+        <IncludePath Value="../../sys/drv"/>
+        <IncludePath Value="../../board/AX3292/mvl8801"/>
+        <IncludePath Value="../../os/freeRTOS/api/inc"/>
+      </Compiler>
+      <Linker Options="" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="../lib_atbm.a" IntermediateDirectory="Debug" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+    <Configuration Name="Release" CompilerType="ap32" DebuggerType="GNU gdb debugger" Type="" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="" C_Options="" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="$(IntermediateDirectory)/lib$(ProjectName).a" IntermediateDirectory="./Release" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+</CodeLite_Project>

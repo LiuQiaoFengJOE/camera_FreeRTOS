@@ -1,0 +1,11 @@
+How to create a project?
+
+A project consists of two parts:
+1. application
+2. board configuration
+
+首先在prj目錄下新建一個子目錄
+然後用CodeLite，在prj的這個子目錄創建一個workspace和project；創建project時注意正確選擇一個工具鏈。
+選擇board
+TBD
+

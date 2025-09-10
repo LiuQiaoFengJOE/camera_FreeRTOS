@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="AX3292-hello" Version="10.0.0" InternalType="">
+  <Plugins>
+    <Plugin Name="qmake">
+      <![CDATA[00010001N0005Debug000000000000]]>
+    </Plugin>
+    <Plugin Name="CMakePlugin">
+      <![CDATA[[{
+  "name": "Debug",
+  "enabled": false,
+  "buildDirectory": "build",
+  "sourceDirectory": "$(ProjectPath)",
+  "generator": "",
+  "buildType": "",
+  "arguments": [],
+  "parentProject": ""
+ }]]]>
+    </Plugin>
+  </Plugins>
+  <VirtualDirectory Name="device">
+    <VirtualDirectory Name="lcd">
+      <File Name="../device/lcd/lcd_mcu_5420.c"/>
+      <File Name="../device/lcd/lcd_mcu_9225G.c"/>
+      <File Name="../device/lcd/lcd_mcu_hx8352b.c"/>
+      <File Name="../device/lcd/lcd_mcu_hx8352c.c"/>
+      <File Name="../device/lcd/lcd_mcu_hx8357b.c"/>
+      <File Name="../device/lcd/lcd_mcu_ili9328.c"/>
+      <File Name="../device/lcd/lcd_mcu_lgdp4532.c"/>
+      <File Name="../device/lcd/lcd_mcu_r61509v.c"/>
+      <File Name="../device/lcd/lcd_mcu_st7789.c"/>
+      <File Name="../device/lcd/lcd_mcu_st7789v.c"/>
+      <File Name="../device/lcd/lcd_rgb_ili8961.c"/>
+      <File Name="../device/lcd/lcd_rgb_ili9342c.c"/>
+      <File Name="../device/lcd/lcd_rgb_ili9806e.c"/>
+      <File Name="../device/lcd/lcd_rgb_jl_lcd.c"/>
+      <File Name="../device/lcd/lcd_rgb_ota5182.c"/>
+      <File Name="../device/lcd/lcd_rgb_st7282.c"/>
+      <File Name="../device/lcd/lcd_rgb_st7701.c"/>
+      <File Name="../device/lcd/tft_lcd.h"/>
+      <File Name="../device/lcd/lcd_rgb_st7701_HSD4.95.c"/>
+      <File Name="../device/lcd/lcd_rgb_9503v.c"/>
+      <File Name="../device/lcd/lcd_mcu_st7735S_spimode.c"/>
+      <File Name="../device/lcd/lcd_mcu_st7789V_spimode.c"/>
+      <File Name="../device/lcd/lcd_rgb_st7701S.c"/>
+      <File Name="../device/lcd/lcd_rgb_9503.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="sensor">
+      <File Name="../device/sensor/COMMON_table.c"/>
+      <File Name="../device/sensor/SENSOR_BF2013.c"/>
+      <File Name="../device/sensor/SENSOR_BF3016.c"/>
+      <File Name="../device/sensor/SENSOR_BF3703.c"/>
+      <File Name="../device/sensor/SENSOR_BF3a03.c"/>
+      <File Name="../device/sensor/SENSOR_GC0307.c"/>
+      <File Name="../device/sensor/SENSOR_GC0308.c"/>
+      <File Name="../device/sensor/SENSOR_GC0309.c"/>
+      <File Name="../device/sensor/SENSOR_GC0328.c"/>
+      <File Name="../device/sensor/SENSOR_GC1004.c"/>
+      <File Name="../device/sensor/SENSOR_GC1034.c"/>
+      <File Name="../device/sensor/SENSOR_GC1054.c"/>
+      <File Name="../device/sensor/SENSOR_GC1064.c"/>
+      <File Name="../device/sensor/SENSOR_H42.c"/>
+      <File Name="../device/sensor/SENSOR_H62.c"/>
+      <File Name="../device/sensor/SENSOR_H65.c"/>
+      <File Name="../device/sensor/SENSOR_H7640.c"/>
+      <File Name="../device/sensor/SENSOR_HM1055.c"/>
+      <File Name="../device/sensor/SENSOR_IT03A1.c"/>
+      <File Name="../device/sensor/SENSOR_NT99141.c"/>
+      <File Name="../device/sensor/SENSOR_NT99142.c"/>
+      <File Name="../device/sensor/SENSOR_OV7670.c"/>
+      <File Name="../device/sensor/SENSOR_OV7725.c"/>
+      <File Name="../device/sensor/SENSOR_OV7736.c"/>
+      <File Name="../device/sensor/SENSOR_OV9710.c"/>
+      <File Name="../device/sensor/SENSOR_OV9732.c"/>
+      <File Name="../device/sensor/SENSOR_SC1045.c"/>
+      <File Name="../device/sensor/SENSOR_SC1243.c"/>
+      <File Name="../device/sensor/SENSOR_SIV100B.c"/>
+      <File Name="../device/sensor/SENSOR_SIV120B.c"/>
+      <File Name="../device/sensor/SENSOR_SIV121DS.c"/>
+      <File Name="../device/sensor/SENSOR_SP1409.c"/>
+      <File Name="../device/sensor/SENSOR_SP140A.c"/>
+      <File Name="../device/sensor/SNESOR_FPX1002.c"/>
+      <File Name="../device/sensor/SENSOR_GC1084.c"/>
+      <File Name="../device/sensor/SENSOR_H63.c"/>
+      <File Name="../device/sensor/SENSOR_SC2331.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="tp">
+      <File Name="../device/tp/icn85xx.c"/>
+      <File Name="../device/tp/icn85xx.h"/>
+      <File Name="../device/tp/icn85xx_flash.c"/>
+      <File Name="../device/tp/icn85xx_flash.h"/>
+      <File Name="../device/tp/icnt81.c"/>
+      <File Name="../device/tp/touchPanel.c"/>
+      <File Name="../device/tp/touchPanel.h"/>
+      <File Name="../device/tp/tpiic.c"/>
+      <File Name="../device/tp/tpiic.h"/>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <VirtualDirectory Name="board">
+    <VirtualDirectory Name="AX3292">
+      <VirtualDirectory Name="mvl8801">
+        <File Name="../../board/AX3292/mvl8801/board_config.h"/>
+      </VirtualDirectory>
+      <File Name="../../board/AX3292/board.c"/>
+      <File Name="../../board/AX3292/board_def.h"/>
+      <File Name="../../board/AX3292/spi_boot_cfg.h"/>
+      <File Name="../../board/AX3292/build-nd.s"/>
+      <File Name="../../board/AX3292/spi_boot_cfg.S"/>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <Description/>
+  <Dependencies/>
+  <VirtualDirectory Name="task">
+    <File Name="task/menu.h"/>
+    <File Name="task/uiWin.c"/>
+    <File Name="task/uiWin.h"/>
+    <File Name="task/msgDeal.c"/>
+    <File Name="task/msgSysRecommend.c"/>
+    <File Name="task/msgSysUnshielded.c"/>
+    <File Name="task/taskUI.c"/>
+    <File Name="task/uiTipsMsg.c"/>
+    <File Name="task/taskScan.c"/>
+    <File Name="task/funcAudioPlayer.c"/>
+    <File Name="task/funcAudioPlayerMsg.c"/>
+    <File Name="task/funcAudioPlayerRes.c"/>
+    <File Name="task/funcVideoRecord.c"/>
+    <File Name="task/funcVideoRecordMsg.c"/>
+    <File Name="task/funcPlayBack.c"/>
+    <File Name="task/funcPlayBackMsg.c"/>
+    <File Name="task/funcWifi.c"/>
+    <File Name="task/funcWifiMsg.c"/>
+    <File Name="task/drvKey.c"/>
+    <File Name="task/drvBattery.c"/>
+    <File Name="task/font.c"/>
+    <File Name="task/icon.c"/>
+    <File Name="task/config.c"/>
+    <File Name="task/configGetValue.c"/>
+    <File Name="task/configSystem.c"/>
+    <File Name="task/menuMovieRec.c"/>
+    <File Name="task/menuPlayBack.c"/>
+    <File Name="task/toolFunc.c"/>
+    <File Name="task/uiAsternMsg.c"/>
+    <File Name="task/uiMenuDateTime1Msg.c"/>
+    <File Name="task/uiMenuDefaultMsg.c"/>
+    <File Name="task/uiMenuDelAllMsg.c"/>
+    <File Name="task/uiMenuDelCurMsg.c"/>
+    <File Name="task/uiMenuFormatMsg.c"/>
+    <File Name="task/uiMenuItemMsg.c"/>
+    <File Name="task/uiMenuLockCurMsg.c"/>
+    <File Name="task/uiMenuOptionMsg.c"/>
+    <File Name="task/uiMenuUnlockAllMsg.c"/>
+    <File Name="task/uiMenuUnlockCurMsg.c"/>
+    <File Name="task/uiMenuUsbMsg.c"/>
+    <File Name="task/uiMenuVersionMsg.c"/>
+    <File Name="task/uiNoFileMsg.c"/>
+    <File Name="task/uiSelfTestMsg.c"/>
+    <File Name="task/uiSlideShowMsg.c"/>
+    <File Name="task/uiThumbnallMsg.c"/>
+    <File Name="task/uiTips1Msg.c"/>
+    <File Name="task/upgrade.c"/>
+    <File Name="task/uiMenuLockAllMsg.c"/>
+    <File Name="task/funcPowerOff.c"/>
+    <File Name="task/funcUSBDev.c"/>
+    <File Name="task/drvMisc.c"/>
+    <File Name="task/mode.c"/>
+    <File Name="task/sysmem.c"/>
+    <File Name="task/wifi_cfg.c"/>
+    <File Name="task/main.c"/>
+    <File Name="task/taskManage.c"/>
+    <File Name="task/funcUsbDevMsg.c"/>
+    <File Name="task/funcTakePhoto.c"/>
+    <File Name="task/funcTakePhotoMsg.c"/>
+    <File Name="task/uiUpgradeMsg.c"/>
+    <File Name="task/funcAudioRecord.c"/>
+    <File Name="task/funcAudioRecordMsg.c"/>
+    <File Name="task/menuXml.c"/>
+    <VirtualDirectory Name="game">
+      <File Name="task/game/game_block.c"/>
+      <File Name="task/game/game_maze.c"/>
+      <File Name="task/game/game_snake.c"/>
+      <File Name="task/game/game_sokoban.c"/>
+      <File Name="task/game/game_tetris.c"/>
+      <File Name="task/game/taskGame.c"/>
+      <File Name="task/game/taskGame.h"/>
+      <File Name="task/game/taskGameMenu.c"/>
+      <File Name="task/game/taskGameMenuMsg.c"/>
+      <File Name="task/game/taskGameMenuRes.c"/>
+      <File Name="task/game/taskGameMsg.c"/>
+      <File Name="task/game/xos/xmsgq.c"/>
+      <File Name="task/game/xos/xmsgq.h"/>
+      <File Name="task/game/display.c"/>
+      <File Name="task/game/display.h"/>
+      <File Name="task/game/xos/xos.c"/>
+      <File Name="task/game/xos/xos.h"/>
+      <File Name="task/game/xos/x_cpu.c"/>
+      <File Name="task/game/xos/x_cpu.h"/>
+      <File Name="task/game/xos/xcfg.h"/>
+      <File Name="task/game/xos/xdef.h"/>
+      <File Name="task/game/xos/xerr.h"/>
+      <File Name="task/game/xos/xmbox.c"/>
+      <File Name="task/game/xos/xmbox.h"/>
+      <File Name="task/game/xos/xwork.c"/>
+      <File Name="task/game/xos/xwork.h"/>
+    </VirtualDirectory>
+    <File Name="task/funMainMenu.c"/>
+    <File Name="task/funMainMenuMsg.c"/>
+    <File Name="task/funMainMenuRes.c"/>
+    <File Name="task/picSticker.c"/>
+    <File Name="task/userMedia.c"/>
+    <File Name="task/userMedia.h"/>
+    <File Name="task/image_watermark.c"/>
+    <File Name="task/image_watermark.h"/>
+    <File Name="task/funcPhotoScoreMsg.c"/>
+    <File Name="task/funcPhotoScoreRes.c"/>
+    <File Name="task/funcPhotoScore.c"/>
+    <File Name="task/sd_config.c"/>
+    <File Name="task/sd_config.h"/>
+    <File Name="task/wifiProc.c"/>
+    <File Name="task/wifiProc.h"/>
+    <File Name="task/iperf2_adapt.c"/>
+    <File Name="task/iperf2_adapt.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="resource">
+    <File Name="resource/RES.H"/>
+    <File Name="resource/resource.h"/>
+    <File Name="resource/r_palette.h"/>
+    <File Name="resource/user_icon.c"/>
+    <File Name="resource/user_icon.h"/>
+    <File Name="resource/user_str.c"/>
+    <File Name="resource/user_str.h"/>
+  </VirtualDirectory>
+  <Dependencies Name="Debug"/>
+  <Settings Type="Executable">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="ap32" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g;-Os;-Wall" C_Options="-g;-Os;-Wall;-mhard-div;-ffunction-sections;-fdata-sections;-lm" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="../../inc"/>
+        <IncludePath Value="../../arch/AX3292"/>
+        <IncludePath Value="../../board/AX3292/mvl8801"/>
+        <IncludePath Value="../../os/freeRTOS/inc"/>
+        <IncludePath Value="../../os/freeRTOS/osal"/>
+        <IncludePath Value="../../os/freeRTOS/ports/AX3292"/>
+        <IncludePath Value="../../os/lwip/2.0.2/include"/>
+        <IncludePath Value="../../os/lwip/ports/AX3292"/>
+        <IncludePath Value="../../sys"/>
+        <IncludePath Value="../../lib"/>
+        <IncludePath Value="../../lib/drv"/>
+        <IncludePath Value="../../lib/mediaFile/mp3/inc"/>
+        <IncludePath Value="../../net"/>
+        <IncludePath Value="../../sys/drv"/>
+        <IncludePath Value="../../sys/iperf2"/>
+        <IncludePath Value="../../sys/drv/sensor/"/>
+        <IncludePath Value="../../inc/net"/>
+        <IncludePath Value="../../arch/AX3292/hal/inc"/>
+        <IncludePath Value="../../arch/AX3292/ax32xx/inc"/>
+        <IncludePath Value="../../arch/AX3292/inc/asm"/>
+        <IncludePath Value="../device/tp"/>
+      </Compiler>
+      <Linker Options="-T../../board/AX3292/mvl8801/AX3292.ld;-Map=$(IntermediateDirectory)/$(ProjectName).map;--gc-sections;-(;-l_lib8189ftvap32;-lAX3292-rtl8189ftv;-lAX3292-sys;-lAX3292-lib20;-lAX3292-libex;-lAX3292-os;-lAX3292-lwip;-lAX3292-mcu;-lc;-lm;-lgcc;-lnosys;-)" Required="yes">
+        <LibraryPath Value="../../sdk"/>
+        <LibraryPath Value="../../sdk/thirdparty"/>
+      </Linker>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="$(IntermediateDirectory)/$(ProjectName).elf" IntermediateDirectory="./Debug" Command="./$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild>
+        <Command Enabled="yes">or1k-elf-ld.exe -o $(IntermediateDirectory)/AX3292-dbr.elf @"$(ProjectName).txt" -L../../sdk   -T../../board/AX3292/mvl8801/AX3292-dbr.ld --cref -Map=$(IntermediateDirectory)/AX3292-dbr.map --gc-sections -( -lAX3292-sys -lAX3292-mcu -)</Command>
+        <Command Enabled="yes">or1k-elf-objcopy -O binary $(IntermediateDirectory)/AX3292-dbr.elf $(IntermediateDirectory)/AX3292-dbr.bin</Command>
+        <Command Enabled="yes">or1k-elf-objcopy -O binary $(IntermediateDirectory)/$(ProjectName).elf $(IntermediateDirectory)/$(ProjectName).bin</Command>
+        <Command Enabled="yes">or1k-elf-size -A $(IntermediateDirectory)/$(ProjectName).elf</Command>
+        <Command Enabled="yes">..\..\output\boottool AX3292-Config.dat</Command>
+        <Command Enabled="yes">..\..\output\make.bat</Command>
+        <Command Enabled="yes">or1k-elf-objdump -S $(IntermediateDirectory)/AX3292-dbr.elf &gt;$(IntermediateDirectory)/AX3292-dbr.lst</Command>
+        <Command Enabled="yes">or1k-elf-objdump -S $(IntermediateDirectory)/$(ProjectName).elf &gt;$(IntermediateDirectory)/$(ProjectName).lst</Command>
+      </PostBuild>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+</CodeLite_Project>

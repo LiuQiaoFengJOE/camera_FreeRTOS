@@ -1,0 +1,887 @@
+/****************************************************************************
+**
+ **                              LAYOUT
+  ** *   **             THE APPOTECH MULTIMEDIA PROCESSOR
+   **** **                  LAYOUT FOR SETTING MENU
+  *** ***
+ **  * **               (C) COPYRIGHT 2016 BUILDWIN 
+**      **                         
+         **         BuildWin SZ LTD.CO  ; VIDEO PROJECT TEAM
+          **   
+* File Name   : menu_setting.c
+* Author      : Mark.Douglas 
+* Version     : V100
+* Date        : 09/22/2016
+* Description : 
+*               
+* History     : 
+* 2016-09-22  : 
+*      <1>.This is created by mark,set version as v100.
+*      <2>.Add basic functions & information
+******************************************************************************/
+#include "application.h"
+#include "uiWin.h"
+#include "menu.h"
+#include "tcpControl/tcpMessage.h"
+#include "appcmd/socket_cmd.h"
+char version_str[32]="2023/02/20";
+
+#if JR_APP_PROTOCOL
+MENU_OPTION_START(wifiPreviewQuality)
+MENU_OPTION_STR_NET(R_ID_STR_COM_LOW,PREVIEW_QUALITY_LOW)
+MENU_OPTION_STR_NET(R_ID_STR_COM_MIDDLE,PREVIEW_QUALITY_MID)
+MENU_OPTION_STR_NET(R_ID_STR_COM_HIGH,PREVIEW_QUALITY_HIGH)
+MENU_OPTION_END()
+MENU_OPTION_START(wifiPreviewRes)
+MENU_OPTION_STR_NET(R_ID_STR_RES_VGA,PREVIEW_RESOLUTION_SD)
+//MENU_OPTION_STR_NET(R_ID_STR_RES_HD,PREVIEW_RESOLUTION_HD)
+//MENU_OPTION_STR_NET(R_ID_STR_RES_FHD,PREVIEW_RESOLUTION_FHD)
+MENU_OPTION_END()
+MENU_OPTION_START(videoQuality)
+MENU_OPTION_STR_NET(R_ID_STR_COM_LOW,VIDEO_QUALITY_LOW)
+MENU_OPTION_STR_NET(R_ID_STR_COM_MIDDLE,VIDEO_QUALITY_MID)
+MENU_OPTION_STR_NET(R_ID_STR_COM_HIGH,VIDEO_QUALITY_HIGH)
+MENU_OPTION_END()
+MENU_OPTION_START(language)//--------LANGUAGE
+MENU_OPTION_STR_NET(R_ID_STR_LAN_ENGLISH,LANGUAGE_EN_US)
+MENU_OPTION_STR_NET(R_ID_STR_LAN_SCHINESE,LANGUAGE_ZH_CN)
+MENU_OPTION_STR_NET(R_ID_STR_LAN_TCHINESE,LANGUAGE_ZH_TW)
+MENU_OPTION_STR_NET(R_ID_STR_LAN_JAPANESE,LANGUAGE_JA_JP)
+/*MENU_OPTION_STR(R_ID_STR_LAN_KOERA)
+MENU_OPTION_STR(R_ID_STR_LAN_RUSSIAN)
+MENU_OPTION_STR(R_ID_STR_LAN_FRECH)
+MENU_OPTION_STR(R_ID_STR_LAN_GERMAN)
+MENU_OPTION_STR(R_ID_STR_LAN_CZECH)
+MENU_OPTION_STR(R_ID_STR_LAN_PORTUGUESE)
+MENU_OPTION_STR(R_ID_STR_LAN_POLISH)
+MENU_OPTION_STR(R_ID_STR_LAN_DUTCH)
+MENU_OPTION_STR(R_ID_STR_LAN_TURKEY)
+MENU_OPTION_STR(R_ID_STR_LAN_TAI)*/
+MENU_OPTION_END()
+MENU_OPTION_START(loopRecord)//--------loop record
+MENU_OPTION_STR_NET(R_ID_STR_COM_OFF,CYCLIC_RECORD_OFF)
+MENU_OPTION_STR_NET(R_ID_STR_TIM_1MIN,CYCLIC_RECORD_1MIN)
+MENU_OPTION_STR_NET(R_ID_STR_TIM_2MIN,CYCLIC_RECORD_2MIN)
+MENU_OPTION_STR_NET(R_ID_STR_TIM_3MIN,CYCLIC_RECORD_3MIN)
+//MENU_OPTION_STR_NET(R_ID_STR_TIM_4MIN,CYCLIC_RECORD_4MIN)
+MENU_OPTION_STR_NET(R_ID_STR_TIM_5MIN,CYCLIC_RECORD_5MIN)
+MENU_OPTION_STR_NET(R_ID_STR_TIM_10MIN,CYCLIC_RECORD_10MIN)
+MENU_OPTION_END()
+MENU_OPTION_START(keySound)//--------key sound
+MENU_OPTION_STR_NET(R_ID_STR_COM_OFF,BUTTON_SOUND_OFF)
+MENU_OPTION_STR_NET(R_ID_STR_COM_ON,BUTTON_SOUND_ON)
+MENU_OPTION_END()
+MENU_OPTION_START(vidResolution)//---------video resolution
+//MENU_OPTION_STR_NET(R_ID_STR_RES_VGA,VIDEO_RESOLUTION_SD)
+MENU_OPTION_STR_NET(R_ID_STR_RES_HD,VIDEO_RESOLUTION_HD)
+MENU_OPTION_STR_NET(R_ID_STR_RES_FHD,VIDEO_RESOLUTION_FHD)
+MENU_OPTION_END()
+MENU_OPTION_START(audio)//--------movie audio
+MENU_OPTION_STR_NET(R_ID_STR_COM_OFF,VIDEO_SOUND_OFF)
+MENU_OPTION_STR_NET(R_ID_STR_COM_ON,VIDEO_SOUND_ON)
+MENU_OPTION_END()
+MENU_OPTION_START(awb)//---------white balance
+MENU_OPTION_STR_NET(R_ID_STR_ISP_AUTO,WHITE_BALANCE_AUTO)
+MENU_OPTION_STR_NET(R_ID_STR_ISP_SUNLIGHT,WHITE_BALANCE_DAYLIGHT)
+MENU_OPTION_STR_NET(R_ID_STR_ISP_CLOUDY,WHITE_BALANCE_CLOUDY)
+MENU_OPTION_STR_NET(R_ID_STR_ISP_TUNGSTEN,WHITE_BALANCE_TUNGSTEN)
+MENU_OPTION_STR_NET(R_ID_STR_ISP_FLUORESCENT,WHITE_BALANCE_FLUORESCENT)
+MENU_OPTION_END()
+MENU_OPTION_START(ev)//--------EV
+MENU_OPTION_STR_NET(R_ID_STR_COM_P2_0,EXPOSURE_COMPENSATION_1)
+MENU_OPTION_STR_NET(R_ID_STR_COM_P1_0,EXPOSURE_COMPENSATION_2)
+MENU_OPTION_STR_NET(R_ID_STR_COM_P0_0,EXPOSURE_COMPENSATION_3)
+MENU_OPTION_STR_NET(R_ID_STR_COM_N1_0,EXPOSURE_COMPENSATION_4)
+MENU_OPTION_STR_NET(R_ID_STR_COM_N2_0,EXPOSURE_COMPENSATION_5)
+MENU_OPTION_END()
+MENU_OPTION_START(md)//--------motion decetion
+MENU_OPTION_STR_NET(R_ID_STR_COM_OFF,MOTION_DETECTION_OFF)
+MENU_OPTION_STR_NET(R_ID_STR_COM_ON,MOTION_DETECTION_ON)
+MENU_OPTION_END()
+MENU_OPTION_START(photoBurst)
+MENU_OPTION_STR_NET(R_ID_STR_COM_OFF,PHOTO_BURST_OFF)
+MENU_OPTION_STR_NET(R_ID_STR_RES_2M,PHOTO_BURST_2)
+MENU_OPTION_STR_NET(R_ID_STR_RES_3M,PHOTO_BURST_3)
+MENU_OPTION_STR_NET(R_ID_STR_RES_5M,PHOTO_BURST_5)
+MENU_OPTION_STR_NET(R_ID_STR_RES_10M,PHOTO_BURST_10)
+MENU_OPTION_END()
+MENU_OPTION_START(photoTimeLapse)
+MENU_OPTION_STR_NET(R_ID_STR_COM_OFF,PHOTO_TIMELAPSE_OFF)
+MENU_OPTION_STR_NET(R_ID_STR_RES_2M,PHOTO_TIMELAPSE_2)
+MENU_OPTION_STR_NET(R_ID_STR_RES_3M,PHOTO_TIMELAPSE_3)
+MENU_OPTION_STR_NET(R_ID_STR_RES_5M,PHOTO_TIMELAPSE_5)
+MENU_OPTION_STR_NET(R_ID_STR_RES_10M,PHOTO_TIMELAPSE_10)
+//MENU_OPTION_STR_NET(R_ID_STR_RES_10M,PHOTO_TIMELAPSE_15)
+//MENU_OPTION_STR_NET(R_ID_STR_RES_3M,PHOTO_TIMELAPSE_20)
+//MENU_OPTION_STR_NET(R_ID_STR_RES_2M,PHOTO_TIMELAPSE_25)
+//MENU_OPTION_STR_NET(R_ID_STR_RES_3M,PHOTO_TIMELAPSE_30)
+MENU_OPTION_END()
+MENU_OPTION_START(timeStamp)//--------time stamp
+MENU_OPTION_STR_NET(R_ID_STR_COM_OFF,DATE_STAMP_OFF)
+MENU_OPTION_STR_NET(R_ID_STR_COM_ON,DATE_STAMP_ON)
+MENU_OPTION_END()
+MENU_OPTION_START(photoTimeStamp)//--------time stamp
+MENU_OPTION_STR_NET(R_ID_STR_COM_OFF,0)
+MENU_OPTION_STR_NET(R_ID_STR_COM_DATA,1)
+MENU_OPTION_STR_NET(R_ID_STR_COM_DATATIME,2)
+MENU_OPTION_END()
+MENU_OPTION_START(autoPowerOff)//----AUTO POWER OFF
+MENU_OPTION_STR_NET(R_ID_STR_COM_OFF,AUTO_SHUTDOWN_OFF)
+MENU_OPTION_STR_NET(R_ID_STR_TIM_1MIN,AUTO_SHUTDOWN_1MIN)
+MENU_OPTION_STR_NET(R_ID_STR_TIM_3MIN,AUTO_SHUTDOWN_3MIN)
+MENU_OPTION_STR_NET(R_ID_STR_TIM_5MIN,AUTO_SHUTDOWN_5MIN)
+MENU_OPTION_END()
+MENU_OPTION_START(screenSave)//--------screen Save
+MENU_OPTION_STR_NET(R_ID_STR_COM_OFF,SCREEN_SAVER_OFF)
+MENU_OPTION_STR_NET(R_ID_STR_TIM_1MIN,SCREEN_SAVER_1MIN)
+MENU_OPTION_STR_NET(R_ID_STR_TIM_3MIN,SCREEN_SAVER_3MIN)
+MENU_OPTION_STR_NET(R_ID_STR_TIM_5MIN,SCREEN_SAVER_5MIN)
+MENU_OPTION_END()
+#else
+MENU_OPTION_START(wifiPreviewQuality)
+MENU_OPTION_STR_NET(R_ID_STR_COM_LOW,PREVIEW_QUALITY_LOW)
+MENU_OPTION_STR_NET(R_ID_STR_COM_MIDDLE,PREVIEW_QUALITY_MID)
+MENU_OPTION_STR_NET(R_ID_STR_COM_HIGH,PREVIEW_QUALITY_HIGH)
+MENU_OPTION_END()
+MENU_OPTION_START(wifiPreviewRes)
+MENU_OPTION_STR_NET(R_ID_STR_RES_VGA,PREVIEW_RESOLUTION_SD)
+//MENU_OPTION_STR_NET(R_ID_STR_RES_HD,PREVIEW_RESOLUTION_HD)
+//MENU_OPTION_STR_NET(R_ID_STR_RES_FHD,PREVIEW_RESOLUTION_FHD)
+MENU_OPTION_END()
+MENU_OPTION_START(videoQuality)
+MENU_OPTION_STR_NET(R_ID_STR_COM_LOW,VIDEO_QUALITY_LOW)
+MENU_OPTION_STR_NET(R_ID_STR_COM_MIDDLE,VIDEO_QUALITY_MID)
+MENU_OPTION_STR_NET(R_ID_STR_COM_HIGH,VIDEO_QUALITY_HIGH)
+MENU_OPTION_END()
+MENU_OPTION_START(language)//--------LANGUAGE
+MENU_OPTION_STR_NETX(R_ID_STR_LAN_ENGLISH,0,"English")
+MENU_OPTION_STR_NETX(R_ID_STR_LAN_TCHINESE,1,"Traditional Chinese")
+MENU_OPTION_STR_NETX(R_ID_STR_LAN_SCHINESE,2,"Simplified Chinese")
+
+MENU_OPTION_END()
+MENU_OPTION_START(loopRecord)//--------loop record
+MENU_OPTION_STR_NETX(R_ID_STR_COM_OFF,0,"Off")
+MENU_OPTION_STR_NETX(R_ID_STR_TIM_1MIN,1,"1 Minute")
+MENU_OPTION_STR_NETX(R_ID_STR_TIM_2MIN,2,"2 Minutes")
+MENU_OPTION_STR_NETX(R_ID_STR_TIM_3MIN,3,"3 Minutes")
+MENU_OPTION_STR_NETX(R_ID_STR_TIM_5MIN,4,"5 Minutes")
+MENU_OPTION_STR_NETX(R_ID_STR_TIM_10MIN,5,"10 Minutes")
+MENU_OPTION_END()
+MENU_OPTION_START(keySound)//--------key sound
+MENU_OPTION_STR_NETX(R_ID_STR_COM_OFF,0,"Off")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_ON,1,"On")
+MENU_OPTION_END()
+MENU_OPTION_START(vidResolution)//---------video resolution
+//MENU_OPTION_STR_NETX(R_ID_STR_RES_VGA,4,"VGA 640x480 30fps")
+//MENU_OPTION_STR_NETX(R_ID_STR_RES_480FHD,3,"WVGA 800x480 30fps")
+MENU_OPTION_STR_NETX(R_ID_STR_RES_HD,2,"720P 1280x720 30fps")
+MENU_OPTION_STR_NETX(R_ID_STR_RES_1080P,1,"1080P 1440x1080 30fps")
+MENU_OPTION_STR_NETX(R_ID_STR_RES_FHD,0,"1080FHD 1920x1080 30fps")
+MENU_OPTION_END()
+MENU_OPTION_START(audio)//--------movie audio
+MENU_OPTION_STR_NETX(R_ID_STR_COM_OFF,0,"Off")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_ON,1,"On")
+MENU_OPTION_END()
+MENU_OPTION_START(awb)//---------white balance
+MENU_OPTION_STR_NETX(R_ID_STR_ISP_AUTO,0,"Auto")
+MENU_OPTION_STR_NETX(R_ID_STR_ISP_SUNLIGHT,1,"Daylight")
+MENU_OPTION_STR_NETX(R_ID_STR_ISP_CLOUDY,2,"Cloudy")
+MENU_OPTION_STR_NETX(R_ID_STR_ISP_TUNGSTEN,3,"Tungsten")
+MENU_OPTION_STR_NETX(R_ID_STR_ISP_FLUORESCENT,4,"Flourescent")
+MENU_OPTION_END()
+MENU_OPTION_START(ev)//--------EV
+MENU_OPTION_STR_NETX(R_ID_STR_COM_P6_0,0,"+2.0")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_P5_0,1,"+5/3")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_P4_0,2,"+4/3")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_P3_0,3,"+1.0")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_P2_0,4,"+2/3")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_P1_0,5,"+1/3")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_P0_0,6,"+0.0")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_N1_0,7,"-1/3")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_N2_0,8,"-2/3")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_N3_0,9,"-1.0")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_N4_0,10,"-4/3")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_N5_0,11,"-5/3")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_N6_0,12,"-2.0")
+MENU_OPTION_END()
+MENU_OPTION_START(md)//--------motion decetion
+MENU_OPTION_STR_NETX(R_ID_STR_COM_OFF,0,"Off")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_ON,1,"On")
+MENU_OPTION_END()
+MENU_OPTION_START(photoBurst)
+MENU_OPTION_STR_NETX(R_ID_STR_COM_OFF,PHOTO_BURST_OFF,"Off")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_ON,1,"On")
+//MENU_OPTION_STR_NET(R_ID_STR_RES_2M,PHOTO_BURST_2)
+//MENU_OPTION_STR_NET(R_ID_STR_RES_3M,PHOTO_BURST_3)
+//MENU_OPTION_STR_NET(R_ID_STR_RES_5M,PHOTO_BURST_5)
+//MENU_OPTION_STR_NET(R_ID_STR_RES_10M,PHOTO_BURST_10)
+MENU_OPTION_END()
+MENU_OPTION_START(photoTimeLapse)
+MENU_OPTION_STR_NET(R_ID_STR_COM_OFF,PHOTO_TIMELAPSE_OFF)
+MENU_OPTION_STR_NET(R_ID_STR_RES_2M,PHOTO_TIMELAPSE_2)
+MENU_OPTION_STR_NET(R_ID_STR_RES_3M,PHOTO_TIMELAPSE_3)
+MENU_OPTION_STR_NET(R_ID_STR_RES_5M,PHOTO_TIMELAPSE_5)
+MENU_OPTION_STR_NET(R_ID_STR_RES_10M,PHOTO_TIMELAPSE_10)
+//MENU_OPTION_STR_NET(R_ID_STR_RES_10M,PHOTO_TIMELAPSE_15)
+//MENU_OPTION_STR_NET(R_ID_STR_RES_3M,PHOTO_TIMELAPSE_20)
+//MENU_OPTION_STR_NET(R_ID_STR_RES_2M,PHOTO_TIMELAPSE_25)
+//MENU_OPTION_STR_NET(R_ID_STR_RES_3M,PHOTO_TIMELAPSE_30)
+MENU_OPTION_END()
+MENU_OPTION_START(timeStamp)//--------time stamp
+MENU_OPTION_STR_NETX(R_ID_STR_COM_OFF,0,"Off")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_ON,1,"On")
+MENU_OPTION_END()
+MENU_OPTION_START(photoTimeStamp)//--------time stamp
+MENU_OPTION_STR_NETX(R_ID_STR_COM_OFF,0,"Off")
+//MENU_OPTION_STR_NET(R_ID_STR_COM_DATA,1)
+MENU_OPTION_STR_NETX(R_ID_STR_COM_ON,1,"On")
+MENU_OPTION_END()
+MENU_OPTION_START(autoPowerOff)//----AUTO POWER OFF
+MENU_OPTION_STR_NETX(R_ID_STR_COM_OFF,0,"Off")
+MENU_OPTION_STR_NETX(R_ID_STR_TIM_1MIN,1,"1 Minute")
+MENU_OPTION_STR_NETX(R_ID_STR_TIM_3MIN,2,"3 Minutes")
+//MENU_OPTION_STR_NET(R_ID_STR_TIM_5MIN,3)
+MENU_OPTION_END()
+MENU_OPTION_START(screenSave)//--------screen Save
+MENU_OPTION_STR_NETX(R_ID_STR_COM_OFF,0,"Off")
+MENU_OPTION_STR_NETX(R_ID_STR_TIM_3MIN,1,"3 Minutes")
+MENU_OPTION_STR_NETX(R_ID_STR_TIM_5MIN,2,"5 Minutes")
+MENU_OPTION_STR_NETX(R_ID_STR_TIM_10MIN,3,"10 Minutes")
+MENU_OPTION_END()
+#endif
+MENU_OPTION_START(sharpness)//--------sharpness
+MENU_OPTION_STR_NETX( R_ID_STR_ISP_STRONG,0,"Strong")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_STANDARD,1,"Normal")
+MENU_OPTION_STR_NETX(R_ID_STR_ISP_SOFT,2,"Soft")
+MENU_OPTION_END()
+MENU_OPTION_START(iso)//--------iso
+MENU_OPTION_STR_NETX(R_ID_STR_ISP_AUTO,0,"Auto")
+MENU_OPTION_STR_NETX(R_ID_STR_ISP_ISO100,1,"100")
+MENU_OPTION_STR_NETX(R_ID_STR_ISP_ISO200,2,"200")
+MENU_OPTION_END()
+MENU_OPTION_START(debounce)//--------debounce
+MENU_OPTION_STR_NETX(R_ID_STR_COM_OFF,0,"Off")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_ON,1,"On")
+MENU_OPTION_END()
+MENU_OPTION_START(dateFormat)//--------debounce
+MENU_OPTION_STR_NETX(R_ID_STR_COM_YMD,0,"YY/MM/DD")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_MDY,1,"MM/DD/YY")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_DMY,2,"DD/MM/YY")
+MENU_OPTION_END()
+MENU_OPTION_START(photoQuality)//--------debounce
+MENU_OPTION_STR_NETX(R_ID_STR_COM_HIGHQUALITY,0,"Fine")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_STANDARD,1,"Normal")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_ECONOMY,2,"Economical")
+MENU_OPTION_END()
+MENU_OPTION_START(WDR)//--------debounce
+MENU_OPTION_STR_NETX(R_ID_STR_COM_OFF,0,"Off")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_ON,1,"On")
+MENU_OPTION_END()
+MENU_OPTION_START(photoResolution)//--------- photo resolution
+MENU_OPTION_STR_NETX(R_ID_STR_RES_48M,0,"48M (9248x5216)")
+MENU_OPTION_STR_NETX(R_ID_STR_RES_20M,1,"20M (6016x3392)")
+MENU_OPTION_STR_NETX(R_ID_STR_RES_12M,2,"12M (4032x3024)")
+MENU_OPTION_STR_NETX(R_ID_STR_RES_10M,3,"10M (3648x2736)")
+MENU_OPTION_STR_NETX(R_ID_STR_RES_8M,4,"8M (3264x2448)")
+MENU_OPTION_STR_NETX(R_ID_STR_RES_5M,5,"5M (2592x1944)")
+MENU_OPTION_STR_NETX(R_ID_STR_RES_3M,6,"3M (2048x1536)")
+MENU_OPTION_STR_NETX(R_ID_STR_RES_2M,7,"2MHD (1920x1080)")
+MENU_OPTION_STR_NETX(R_ID_STR_RES_1M,8,"1.3M (1280x960)")
+//MENU_OPTION_STR_NETX(R_ID_STR_RES_VGA,7,"VGA (640x480)")
+MENU_OPTION_END()
+MENU_OPTION_START(parking)//--------parking mode
+MENU_OPTION_STR(R_ID_STR_COM_OFF)
+MENU_OPTION_STR(R_ID_STR_COM_ON)
+MENU_OPTION_END()
+MENU_OPTION_START(gsensor)//--------gsensor
+MENU_OPTION_STR(R_ID_STR_COM_OFF)
+MENU_OPTION_STR(R_ID_STR_COM_LOW)
+MENU_OPTION_STR(R_ID_STR_COM_MIDDLE)
+MENU_OPTION_STR(R_ID_STR_COM_HIGH)
+MENU_OPTION_END()
+MENU_OPTION_START(frequency)//--------key sound
+MENU_OPTION_STR_NETX(R_ID_STR_COM_50HZ,0,"50 Hz")
+MENU_OPTION_STR_NETX(R_ID_STR_COM_60HZ,1,"60 Hz")
+MENU_OPTION_END()
+MENU_OPTION_START(irLed)//--------ir
+MENU_OPTION_STR(R_ID_STR_COM_OFF)
+MENU_OPTION_STR(R_ID_STR_COM_ON)
+MENU_OPTION_STR(R_ID_STR_IR_AUTO)
+MENU_OPTION_END()
+MENU_OPTION_START(version)
+MENU_OPTION_STR(version_str)
+MENU_OPTION_END()
+MENU_OPTION_START(xmlVersion)
+MENU_OPTION_STRX(0,version_str)
+MENU_OPTION_END()
+
+void menuProcDateTime(winHandle handle,uint32 parameNum,uint32* parame);
+void menuProcFormat(winHandle handle,uint32 parameNum,uint32* parame);
+void menuProcDefault(winHandle handle,uint32 parameNum,uint32* parame);
+void menuProcVersion(winHandle handle,uint32 parameNum,uint32* parame);
+void menuProcApp(winHandle handle,uint32 parameNum,uint32* parame);
+
+MENU_ITME_START(movie)
+MENU_ITEM_PROC(menuProcApp,NULL,R_ID_STR_BT_DEPLOY)
+MENU_ITEM_OPTIONS(vidResolution,CONFIG_ID_RESOLUTION,R_ID_ICON_MENURESOLUTION,R_ID_STR_SET_RESOLUTION)
+//MENU_ITEM_OPTIONS(WDR,CONFIG_ID_WDR,R_ID_ICON_MENURESOLUTION,R_ID_STR_COM_WDR)
+MENU_ITEM_OPTIONS(photoResolution,CONFIG_ID_PRESLUTION,R_ID_ICON_MENUIMAGEQ,R_ID_STR_COM_PHOTORESOLUTION)
+MENU_ITEM_OPTIONS(loopRecord,CONFIG_ID_LOOPTIME,R_ID_ICON_MENULOOPRECORD,R_ID_STR_SET_LOOPRECORD)
+// MENU_ITEM_OPTIONS(awb,CONFIG_ID_WBLANCE,R_ID_ICON_MENULIGHTNORMAL,R_ID_STR_ISP_WHITEBL)
+// MENU_ITEM_OPTIONS(ev,CONFIG_ID_EV,R_ID_ICON_MENUEV,R_ID_STR_ISP_EXPOSURE)
+// MENU_ITEM_OPTIONS(sharpness,CONFIG_ID_SHARPNESS,R_ID_ICON_MENUEV,R_ID_STR_COM_SHARPNESS)
+// MENU_ITEM_OPTIONS(iso,CONFIG_ID_ISO,R_ID_ICON_MENUEV,R_ID_STR_ISP_ISO)
+// MENU_ITEM_OPTIONS(debounce,CONFIG_ID_DEBOUNCE,R_ID_ICON_MENUEV,R_ID_STR_ISP_ANTISHANK)
+MENU_ITEM_OPTIONS(photoQuality,CONFIG_ID_PHOTOQUALITY,R_ID_ICON_MENUIMAGEQ,R_ID_STR_SET_QUALITY)
+//MENU_ITEM_OPTIONS(md,CONFIG_ID_MOTIONDECTION,R_ID_ICON_MENUMOTION,R_ID_STR_SET_MOTIONDET)
+MENU_ITEM_OPTIONS(audio,CONFIG_ID_AUDIOREC,R_ID_ICON_MENUAUDIO,R_ID_STR_SET_AUDIOREC)
+//MENU_ITEM_OPTIONS(parking,CONFIG_ID_PARKMODE,R_ID_ICON_MENUMONITOR,R_ID_STR_SET_PARKMODE)
+MENU_ITEM_OPTIONS(timeStamp,CONFIG_ID_TIMESTAMP,R_ID_ICON_MENUSTRAMP,R_ID_STR_SET_TIMESTRAMP)
+MENU_ITEM_OPTIONS(photoTimeStamp,CONFIG_ID_PHOTOTIMESTAMP,R_ID_ICON_MENUSTRAMP,R_ID_STR_SET_PHOTOTIMESTRAMP)
+//MENU_ITEM_OPTIONS(gsensor,CONFIG_ID_GSENSOR,R_ID_ICON_MENUGSENSOR,R_ID_STR_SET_GSENSOR)
+MENU_ITEM_OPTIONS(keySound,CONFIG_ID_KEYSOUND,R_ID_ICON_MENUAUDIO,R_ID_STR_SET_BEEPSOUND)
+MENU_ITEM_OPTIONS(dateFormat,CONFIG_ID_DATEFORMAT,R_ID_ICON_MENUCLOCK,R_ID_STR_COM_DATEFORMAT)
+MENU_ITEM_PROC(menuProcDateTime,R_ID_ICON_MENUCLOCK,R_ID_STR_SET_DATETIME)
+MENU_ITEM_OPTIONS(autoPowerOff,CONFIG_ID_AUTOOFF,R_ID_ICON_MENUPOWEROFF,R_ID_STR_SET_AUTOOFF)
+MENU_ITEM_OPTIONS(language,CONFIG_ID_LANGUAGE,R_ID_ICON_MENULANGUAGE,R_ID_STR_SET_LANGUAGE)
+//MENU_ITEM_OPTIONS(frequency,CONFIG_ID_FREQUNCY,R_ID_ICON_MENUHZ,R_ID_STR_SET_FREQUENCY)
+MENU_ITEM_OPTIONS(screenSave,CONFIG_ID_SCREENSAVE,R_ID_ICON_MENUSCRENNOFF,R_ID_STR_SET_SCREENOFF)
+MENU_ITEM_PROC(menuProcFormat,R_ID_ICON_MENUFORMAT,R_ID_STR_SET_FORMAT)
+MENU_ITEM_PROC(menuProcDefault,R_ID_ICON_MENURESET,R_ID_STR_SET_RESET)
+MENU_ITEM_PROC(menuProcVersion,R_ID_ICON_MENUVERSION,R_ID_STR_SET_VERSION)
+MENU_ITME_END()
+
+MENU_ITME_START(multiplePagesTest)
+MENU_ITEM_OPTIONS(ev,CONFIG_ID_EV,R_ID_ICON_MENUEV,R_ID_STR_ISP_EXPOSURE)
+MENU_ITEM_OPTIONS(md,CONFIG_ID_MOTIONDECTION,R_ID_ICON_MENUMOTION,R_ID_STR_SET_MOTIONDET)
+MENU_ITME_END()
+
+
+MENU_PAGE_START(movie)
+MENU_PAGE_ITEMS(movie,R_ID_ICON_MTMENU,R_ID_ICON_MTMENU,R_ID_STR_SET_VIDEO)
+//MENU_PAGE_ITEMS(multiplePagesTest,R_ID_ICON_MTRECORD,R_ID_ICON_MTRECORD,R_ID_STR_SET_VIDEO)
+MENU_PAGE_END()
+
+MENU_DEFINE(movie)
+
+static void nouse(void)
+{
+}
+
+void menuProcApp(winHandle handle,uint32 parameNum,uint32* parame)
+{
+	functionStart(FUNCTION_APP,0);
+}
+
+void menuProcDateTime(winHandle handle,uint32 parameNum,uint32* parame)
+{
+	uiOpenWindow(&dateTime1Window,0);
+}
+void menuProcFormat(winHandle handle,uint32 parameNum,uint32* parame)
+{
+	uiOpenWindow(&formatWindow,0);
+}
+void menuProcDefault(winHandle handle,uint32 parameNum,uint32* parame)
+{
+	uiOpenWindow(&defaultWindow,0);
+}
+void menuProcVersion(winHandle handle,uint32 parameNum,uint32* parame)
+{
+	uiOpenWindow(&versionWindow,0);
+}
+extern void mdSetEn(u32 d);
+#if JR_APP_PROTOCOL
+netItem  sysItems[]=
+{
+	NET_ITEM(wifiPreviewQuality,CONFIG_ID_WIFIPREVIEWQUALITY,MSG_ID_PREVIEW_QUALITY)
+	NET_ITEM(wifiPreviewRes,CONFIG_ID_WIFIPREVIERES,MSG_ID_PREVIEW_RESOLUTION)
+	NET_ITEM(videoQuality,CONFIG_ID_VIDEOQUALITY,MSG_ID_PHOTO_QUALITY)
+	NET_ITEM(language,CONFIG_ID_LANGUAGE,MSG_ID_LANGUAGE)
+	NET_ITEM(loopRecord,CONFIG_ID_LOOPTIME,MSG_ID_CYCLIC_RECORD)
+	NET_ITEM(keySound,CONFIG_ID_KEYSOUND,MSG_ID_BUTTON_SOUND)
+	NET_ITEM(vidResolution,CONFIG_ID_RESOLUTION,MSG_ID_VIDEO_RESOLUTION)
+	NET_ITEM(audio,CONFIG_ID_AUDIOREC,MSG_ID_VIDEO_SOUND)
+	NET_ITEM(awb,CONFIG_ID_WBLANCE,MSG_ID_WHITE_BALANCE)
+	NET_ITEM(ev,CONFIG_ID_EV,MSG_ID_EXPOSURE_COMPENSATION)
+	NET_PROC(md,CONFIG_ID_MOTIONDECTION,MSG_ID_MOTION_DETECTION,mdSetEn)
+	NET_ITEM(photoBurst,CONFIG_ID_PHOTOBURST,MSG_ID_PHOTO_BURST)
+	NET_ITEM(photoTimeLapse,CONFIG_ID_PHOTOTIMELAPSE,MSG_ID_PHOTO_TIMELAPSE)
+	NET_ITEM(timeStamp,CONFIG_ID_TIMESTAMP,MSG_ID_DATE_STAMP)
+	NET_ITEM(autoPowerOff,CONFIG_ID_AUTOOFF,MSG_ID_AUTO_SHUTDOWN)
+	NET_ITEM(screenSave,CONFIG_ID_SCREENSAVE,MSG_ID_SCREEN_SAVER)
+};
+netItem  *netItems[ARRAY_LEN(sysItems)];
+void netItemsInit(void)
+{
+	int i;
+	for(i=0;i<ARRAY_LEN(sysItems);i++)
+		netItems[i]=&sysItems[i];
+}
+int xmlCreate(char* buff,u32 size)
+{
+	return 0;
+}
+#else
+void netExpEVset(u32 d)
+{
+	sensor_compensate_exp_set(configValue2Int(CONFIG_ID_EV));
+}
+void netAwbSet(u32 d)
+{
+	awb_scene_mod_set(configValue2Int(CONFIG_ID_WBLANCE));
+}
+netItem recordItems[]=
+{
+	//NET_ITEMX(wifiPreviewQuality,CONFIG_ID_WIFIPREVIEWQUALITY,MSG_ID_PREVIEW_QUALITY)
+	//NET_ITEMX(wifiPreviewRes,CONFIG_ID_WIFIPREVIERES,MSG_ID_PREVIEW_RESOLUTION)
+	//NET_ITEMX(videoQuality,CONFIG_ID_VIDEOQUALITY,MSG_ID_PHOTO_QUALITY)
+	NET_ITEMX(vidResolution,CONFIG_ID_RESOLUTION,Record_Resolution,"Resolution")
+	NET_ITEMX(loopRecord,CONFIG_ID_LOOPTIME,Record_Loop_Recording,"Loop Recording")
+	NET_ITEMX(timeStamp,CONFIG_ID_TIMESTAMP,Record_DateStamp,"Date Stamp")
+	NET_ITEMX(audio,CONFIG_ID_AUDIOREC,Record_RecordAudio,"Record Audio")
+	NET_PROCX(ev,CONFIG_ID_EV,Record_Exposure,netExpEVset,"Exposure")
+	NET_PROCX(md,CONFIG_ID_MOTIONDECTION,Record_MotionDetection,mdSetEn,"Motion Detection")
+	NET_ITEMX(WDR,CONFIG_ID_WDR,Record_WDR,"WDR")
+};
+netItem photoItems[]=
+{
+	NET_ITEMX(photoResolution,CONFIG_ID_PRESLUTION,Capture_Resolution,"Resolution")
+	NET_ITEMX(photoTimeStamp,CONFIG_ID_PHOTOTIMESTAMP,Capture_DateTime,"Date/Time")
+	NET_ITEMX(photoQuality,CONFIG_ID_PHOTOQUALITY,Capture_Quality,"Quality")
+	NET_PROCX(ev,CONFIG_ID_EV,Capture_Exposure,netExpEVset,"Exposure")
+	NET_ITEMX(photoBurst,CONFIG_ID_PHOTOBURST,Capture_Sequence,"Sequence")
+	NET_ITEMX(sharpness,CONFIG_ID_SHARPNESS,Capture_Sharpness,"Sharpness")
+	NET_PROCX(awb,CONFIG_ID_WBLANCE,Capture_WhiteBalance,netAwbSet,"White Balance")
+	NET_ITEMX(iso,CONFIG_ID_ISO,Capture_ISO,"ISO")
+	NET_ITEMX(debounce,CONFIG_ID_DEBOUNCE,Capture_AntiShaking,"Anti-Shaking")
+};
+netItem sysItems[]=
+{
+	NET_ITEMX(frequency,CONFIG_ID_FREQUNCY,System_Frequency,"Frequency")
+	NET_ITEMX(autoPowerOff,CONFIG_ID_AUTOOFF,System_AutoPowerOff,"Auto Power Off")
+	NET_ITEMX(screenSave,CONFIG_ID_SCREENSAVE,System_ScreenSaver,"Screen Saver")
+	NET_ITEMX(language,CONFIG_ID_LANGUAGE,System_Language,"Language")
+	NET_ITEMX(keySound,CONFIG_ID_KEYSOUND,System_BeepSound,"BeepSound")
+	NET_ITEMX(dateFormat,CONFIG_ID_DATEFORMAT,System_DataTime,"Date/Time")
+	XML_ITEM(System_Format,"Format",1)
+	XML_ITEM(System_DefaultSetting,"Default Setting",1)
+	XML_ITEMX(xmlVersion,System_Version,"Version",3)
+};
+netItem wifiItems[]=
+{
+	XML_ITEM(WiFi_Name,"WifiName",2)
+	XML_ITEM(WiFi_Passwd,"Password",2)
+};
+netItem *netItems[ARRAY_LEN(recordItems)+ARRAY_LEN(photoItems)+ARRAY_LEN(sysItems)];
+void netItemsInit(void)
+{
+	int i,j;
+	j=0;
+	for(i=0;i<ARRAY_LEN(recordItems);i++)
+		netItems[j++]=&recordItems[i];
+	for(i=0;i<ARRAY_LEN(photoItems);i++)
+		netItems[j++]=&photoItems[i];
+	for(i=0;i<ARRAY_LEN(sysItems);i++)
+		netItems[j++]=&sysItems[i];
+	printf("netItems:%d\n",j);
+	while(j>ARRAY_LEN(netItems))
+	{
+		printf("netItems err:%d\n",j);
+	}
+}
+int xmlCreate(char* buff,u32 size)
+{
+	int len,i;
+	len=0;
+	len+=sprintf(&buff[len],"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+	len+=sprintf(&buff[len],"<Menu version=\"1.0\">\n");
+	len+=sprintf(&buff[len],INDENT_STR);
+	len+=sprintf(&buff[len],"<Categories>\n");
+///////////////////////////////////
+	len+=xmlItems(&buff[len],recordItems,ARRAY_LEN(recordItems),"Record",2);
+	len+=xmlItems(&buff[len],photoItems,ARRAY_LEN(photoItems),"Capture",2);
+	len+=xmlItems(&buff[len],sysItems,ARRAY_LEN(sysItems),"System",2);
+	len+=xmlItems(&buff[len],wifiItems,ARRAY_LEN(wifiItems),"Wifi",2);
+///////////////////////////////////
+	len+=sprintf(&buff[len],INDENT_STR);
+	len+=sprintf(&buff[len],"</Categories>\n");
+	len+=sprintf(&buff[len],"</Menu>\n");
+	while(len>size)
+	{
+		printf("xml buff small:%d,%d\n",size,len);
+	}
+	return len;
+}
+
+#endif
+u32 xmlExpectedSize(void)
+{
+	return 25*1024;
+}
+u32 menuGetNetMsgVal(u32 netId)
+{
+	u32 i,curOption;
+	u32 defaultVal=0;
+	netItem* itemFind=NULL;
+#if JR_APP_PROTOCOL
+	defaultVal=0xff;
+#endif
+	for(i=0;i<ARRAY_LEN(netItems);i++)
+	{
+		if(netItems[i]->netItemId==netId)
+		{
+			itemFind=netItems[i];
+			break;
+		}
+	}
+	if( itemFind==NULL)
+	{
+		return defaultVal;
+	}
+	curOption=configGet(itemFind->configId);
+	for(i=0;i<itemFind->optionSum;i++)
+	{
+		if(itemFind->pOption[i].str==curOption)
+		{
+			return itemFind->pOption[i].netOptionId;
+		}
+	}
+	return defaultVal;
+}
+
+int menuSetNetMsgVal(u32 netId,u32 Val)
+{
+	u32 i;
+	netItem* itemFind=NULL;
+	for(i=0;i<ARRAY_LEN(netItems);i++)
+	{
+		if(netItems[i]->netItemId==netId)
+		{
+			itemFind=netItems[i];
+			break;
+		}
+	}
+	if( itemFind==NULL||itemFind->configId>=CONFIG_ID_MAX)
+	{
+		printf("0 netid:0x%x,val:%d\n",netId,Val);
+		return -1;
+	}
+	for(i=0;i<itemFind->optionSum;i++)
+	{
+		if(itemFind->pOption[i].netOptionId==Val)
+		{
+			configSet(itemFind->configId,itemFind->pOption[i].str);
+			if(itemFind->proc)
+				itemFind->proc(Val);
+			printf("1 netid:0x%x,val:%d\n",netId,Val);
+			return 0;//itemFind->pOption[i].netOptionId;
+		}
+	}
+	printf("2 netid:0x%x,val:%d\n",netId,Val);
+	return -1;
+}
+
+
+u32 getTimeLapse(void)
+{
+	switch(configGet(CONFIG_ID_PHOTOTIMELAPSE))
+	{
+		case R_ID_STR_COM_OFF:
+			return 0;
+		case R_ID_STR_RES_2M:
+			return 2;
+		case R_ID_STR_RES_3M:
+			return 3;
+		case R_ID_STR_RES_5M:
+			return 5;
+		case R_ID_STR_RES_10M:
+			return 10;
+	}
+	return 0;
+}
+u32 getPhotoBurst(void)
+{
+	switch(configGet(CONFIG_ID_PHOTOBURST))
+	{
+		case R_ID_STR_COM_OFF:
+			return 0;
+		case R_ID_STR_COM_ON:
+			return 3;
+		case R_ID_STR_RES_2M:
+			return 2;
+		case R_ID_STR_RES_3M:
+			return 3;
+		case R_ID_STR_RES_5M:
+			return 5;
+		case R_ID_STR_RES_10M:
+			return 10;
+	}
+	return 0;
+}
+u32 getWifiVidRes(u16 *w,u16 *h)
+{
+	u16 resW=640,resH=360,index=0;
+	switch(configGet(CONFIG_ID_WIFIPREVIERES))
+	{
+		case R_ID_STR_RES_VGA:
+			resW=640;
+			resH=360;
+			index=0;
+			break;
+		case R_ID_STR_RES_HD:
+			resW=1280;
+			resH=720;
+			index=1;
+			break;
+	}
+	if(w)
+		*w=resW;
+	if(h)
+		*h=resH;
+	return index;
+}
+u32 getWifiVidQualiy(void)
+{
+	switch(configGet(CONFIG_ID_WIFIPREVIEWQUALITY))
+	{
+		case R_ID_STR_COM_LOW:
+			return 0;
+		case R_ID_STR_COM_MIDDLE:
+			return 1;
+		case R_ID_STR_COM_HIGH:
+			return 2;
+	}
+	return 1;
+}
+void getVidRes(u16 *w,u16 *h)
+{
+	u32 val=configValue2Int(CONFIG_ID_RESOLUTION);
+	if(w)
+		*w=(val>>16)&0xffff;
+	if(h)
+		*h=(val)&0xffff;
+}
+void getPhotoRes(u16 *w,u16 *h)
+{
+	u32 val=configValue2Int(CONFIG_ID_PRESLUTION);
+	if(w)
+		*w=(val>>16)&0xffff;
+	if(h)
+		*h=(val)&0xffff;
+}
+u32 getPhotoQuality(void)
+{
+	switch(configGet(CONFIG_ID_PHOTOQUALITY))
+	{
+		case R_ID_STR_COM_HIGHQUALITY:
+			return 0;
+		case R_ID_STR_COM_STANDARD:
+			return 1;
+		case R_ID_STR_COM_ECONOMY:
+			return 2;
+	}
+	return 1;
+}
+u32 getFrameSizeByRes(u32 w,u32 h)
+{
+	static u32 qadj[3]={20*1024,10*1024,0};
+	u32 q=getPhotoQuality();
+	switch(w)
+	{
+		case 320:
+			return 20*1024+qadj[q];
+		case 640:
+			return 40*1024+qadj[q];
+		case 1280:
+			return 60*1024+qadj[q];
+		case 1920:
+			return 80*1024+qadj[q];
+	}
+	u32 pixelSum=w*h;
+	if(pixelSum>=1280*720)
+		return 60*1024+qadj[q]+pixelSum*20*1024/(1280*720);
+	return 60*1024+qadj[q]-1280*720*10*1024/pixelSum/4;
+}
+u32 getVidRecTime(void)
+{
+	u32 loopTime=configValue2Int(CONFIG_ID_LOOPTIME);
+	if(loopTime)
+		return loopTime;
+	return 25*60;
+}
+u32 getVidRecAudioEn(void)
+{
+	if(configGet(CONFIG_ID_AUDIOREC)==R_ID_STR_COM_OFF)
+		return 0;
+	return 1;
+}
+u32 curFuncPhoto(void)
+{
+	if(functionCurrent() == FUNCTION_TAKE_PHOTO)
+		return 1;
+	return 0;
+}
+u32 getVidRecLoopEn(void)
+{
+	if(configGet(CONFIG_ID_LOOPTIME)==R_ID_STR_COM_OFF)
+		return 0;
+	return 1;
+}
+u32 getVidWaterMarkEn(void)
+{
+	if(configGet(CONFIG_ID_TIMESTAMP)==R_ID_STR_COM_OFF)
+		return 0;
+	return 1;
+}
+u32 getPhotoWaterMarkEn(void)
+{
+	if(configGet(CONFIG_ID_PHOTOTIMESTAMP)==R_ID_STR_COM_OFF)
+		return 0;
+	return 1;
+}
+u32 getNetWaterMarkEn(void)
+{
+	u32 flag = 1;
+	if(configGet(CONFIG_ID_TIMESTAMP)==R_ID_STR_COM_OFF)
+		flag = 0;
+	return flag;
+}
+
+u32 getPhotoSharpness(void)
+{
+	switch(configGet(CONFIG_ID_SHARPNESS))
+	{
+		case R_ID_STR_ISP_STRONG:
+			return 0;
+		case R_ID_STR_COM_STANDARD:
+			return 1;
+		case R_ID_STR_ISP_SOFT:
+			return 2;
+	}
+	return 1;
+}
+
+u32 getPhotoISO(void)
+{
+	switch(configGet(CONFIG_ID_ISO))
+	{
+		case R_ID_STR_ISP_AUTO:
+			return 0;
+		case R_ID_STR_ISP_ISO100:
+			return 1;
+		case R_ID_STR_ISP_ISO200:
+			return 2;
+	}
+
+	return 0;
+}
+
+u32 getPhotoAntishank(void)
+{
+	if(configGet(CONFIG_ID_DEBOUNCE)==R_ID_STR_COM_OFF)
+		return 0;
+	return 1;
+}
+
+u32 getDateMode(void)
+{
+	switch(configGet(CONFIG_ID_DATEFORMAT))
+	{
+		case R_ID_STR_COM_YMD:
+			return 0;
+		case R_ID_STR_COM_MDY:
+			return 1;
+		case R_ID_STR_COM_DMY:
+			return 2;
+	}
+	return 0;
+}
+u32 getWDR(void)
+{
+	if(configGet(CONFIG_ID_WDR)==R_ID_STR_COM_OFF)
+		return 0;
+	return 1;
+}
+u32 getMdEn(void)
+{
+	if(configGet(CONFIG_ID_MOTIONDECTION)==R_ID_STR_COM_OFF)
+		return 0;
+	return 1;
+}
+int8_t get_rtc_mode(void)
+{
+	return getDateMode();
+}
+int useUsbCamera(void)
+{
+	return (USB1_CAMERA||USB2_CAMERA);
+}
+int usb1CameraWork(void)
+{
+	return USB1_CAMERA;
+}
+int usb2CameraWork(void)
+{
+	return USB2_CAMERA;
+}
+int usbCameraSum(void)
+{
+	if(USB1_CAMERA&&USB2_CAMERA)
+		return 2;
+	if(USB1_CAMERA||USB2_CAMERA)
+		return 1;
+	return 0;
+}
+int takePhotoHighResEn(void)
+{
+	if(USB1_CAMERA&&USB2_CAMERA)
+		return 0;
+	if(USB1_CAMERA||USB2_CAMERA)
+		return 1;
+	return 1;
+}
+
+int usbCameraTime(void)
+{
+	return 50;
+}
+
+int usbCameraRes(u16 *w,u16 *h)
+{
+	if(w)
+		*w=640;
+	if(h)
+		*h=480;
+}
+
+int jrAppProtocol(void)
+{
+	return JR_APP_PROTOCOL;
+}
+
+int support_rf_recv(void)
+{
+	return SUPPORT_RF_RECV;
+}
+
+int curFuncWifi(void)
+{
+	if(functionCurrent() == FUNCTION_WIFI)
+		return 1;
+	return 0;
+}
+
+int picStickerSupport(void)
+{
+	return PIC_STICKER_EN;
+}
+
+int bigPicSupport(void)
+{
+	return BIG_PIC_EN;
+}
+
+int effectsAnimationSupport(void)
+{
+	return EFFECTS_ANIMATION_EN;
+}

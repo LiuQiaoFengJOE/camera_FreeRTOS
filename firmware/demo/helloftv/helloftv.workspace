@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="helloftv" Database="" Version="10.0.0">
+  <Project Name="AX3292-hello-sv6030" Path="AX3292-hello-sv6030.project" Active="No"/>
+  <Project Name="AX3292-hello-atbm" Path="AX3292-hello-atbm.project" Active="Yes"/>
+  <Project Name="AX3292-hello-atbm" Path="AX3292-hello-atbm.project" Active="No"/>
+  <Project Name="AX3292-hello-atbm" Path="AX3292-hello-atbm.project" Active="No"/>
+  <Project Name="AX3292-hello-sv6152" Path="AX3292-hello-sv6152.project" Active="No"/>
+  <Project Name="AX3292-hello" Path="AX3292-hello.project" Active="No"/>
+  <Project Name="AX3292-hello-sv6158" Path="AX3292-hello-sv6158.project" Active="No"/>
+  <Project Name="AX3292-hello-zt9101" Path="AX3292-hello-zt9101.project" Active="No"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Project Name="AX3268-hello" ConfigName="Debug"/>
+      <Project Name="AX3278-hello" ConfigName="Debug"/>
+      <Project Name="AX3268-dbr" ConfigName="Debug"/>
+      <Project Name="AX3278-dbr" ConfigName="Debug"/>
+      <Project Name="AX3281-hello" ConfigName="Debug"/>
+      <Project Name="AX3281-sensor" ConfigName="Debug"/>
+      <Project Name="AX3292-hello-sv6030" ConfigName="Debug"/>
+      <Project Name="AX3292helloatbm" ConfigName="Debug"/>
+      <Project Name="AX3292-hello-atbm" ConfigName="Debug"/>
+      <Project Name="AX3292-hello-sv6152" ConfigName="Debug"/>
+      <Project Name="AX3292-hello" ConfigName="Debug"/>
+      <Project Name="AX3292-hello-sv6158" ConfigName="Debug"/>
+      <Project Name="AX3292-hello-zt9101" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Project Name="AX3268-hello" ConfigName="Release"/>
+      <Project Name="AX3278-hello" ConfigName="Release"/>
+      <Project Name="AX3268-dbr" ConfigName="Release"/>
+      <Project Name="AX3278-dbr" ConfigName="Release"/>
+      <Project Name="AX3281-hello" ConfigName="Release"/>
+      <Project Name="AX3281-sensor" ConfigName="Release"/>
+      <Project Name="AX3292-hello-sv6030" ConfigName="Debug"/>
+      <Project Name="AX3292helloatbm" ConfigName="Release"/>
+      <Project Name="AX3292-hello-atbm" ConfigName="Release"/>
+      <Project Name="AX3292-hello-sv6152" ConfigName="Debug"/>
+      <Project Name="AX3292-hello" ConfigName="Debug"/>
+      <Project Name="AX3292-hello-sv6158" ConfigName="Debug"/>
+      <Project Name="AX3292-hello-zt9101" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>

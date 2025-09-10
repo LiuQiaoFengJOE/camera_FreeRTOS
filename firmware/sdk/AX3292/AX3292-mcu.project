@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="AX3292-mcu" Version="10.0.0" InternalType="">
+  <Plugins>
+    <Plugin Name="qmake">
+      <![CDATA[00010001N0005Debug000000000000]]>
+    </Plugin>
+    <Plugin Name="CMakePlugin">
+      <![CDATA[[{
+  "name": "Debug",
+  "enabled": false,
+  "buildDirectory": "build",
+  "sourceDirectory": "$(ProjectPath)",
+  "generator": "",
+  "buildType": "",
+  "arguments": [],
+  "parentProject": ""
+ }]]]>
+    </Plugin>
+  </Plugins>
+  <VirtualDirectory Name="AX3292">
+    <VirtualDirectory Name="inc">
+      <VirtualDirectory Name="asm">
+        <File Name="../../arch/AX3292/inc/asm/irqflags.h"/>
+        <File Name="../../arch/AX3292/inc/asm/type.h"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="ax32xx">
+      <VirtualDirectory Name="inc">
+        <File Name="../../arch/AX3292/ax32xx/inc/AX3281_IRQ.h"/>
+        <File Name="../../arch/AX3292/ax32xx/inc/ax32xx_auadc.h"/>
+        <File Name="../../arch/AX3292/ax32xx/inc/ax32xx_dma.h"/>
+        <File Name="../../arch/AX3292/ax32xx/inc/ax32xx_wdt.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="src">
+        <File Name="../../arch/AX3292/ax32xx/src/ax32xx_auadc.c" ExcludeProjConfig=""/>
+        <File Name="../../arch/AX3292/ax32xx/src/ax32xx_dma.c"/>
+        <File Name="../../arch/AX3292/ax32xx/src/ax32xx_wdt.c"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="adc">
+      <File Name="../../arch/AX3292/adc/adc.c"/>
+      <File Name="../../arch/AX3292/adc/adc.h"/>
+      <File Name="../../arch/AX3292/adc/hal_adc.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="cache">
+      <File Name="../../arch/AX3292/cache/cache.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="csi">
+      <File Name="../../arch/AX3292/csi/ax32xx_csi.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="gpio_ops">
+      <File Name="../../arch/AX3292/gpio_ops/gpio.c"/>
+      <File Name="../../arch/AX3292/gpio_ops/gpio.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="i2c">
+      <File Name="../../arch/AX3292/i2c/iic.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="irq">
+      <File Name="../../arch/AX3292/irq/interrupt.c"/>
+      <File Name="../../arch/AX3292/irq/irq_s.S"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="isp">
+      <File Name="../../arch/AX3292/isp/ax32xx_isp.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="lcd">
+      <File Name="../../arch/AX3292/lcd/lcdc.c"/>
+      <File Name="../../arch/AX3292/lcd/osd.c"/>
+      <File Name="../../arch/AX3292/lcd/osd.h"/>
+      <File Name="../../arch/AX3292/lcd/rotate.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="mem">
+      <File Name="../../arch/AX3292/mem/mem.c"/>
+      <File Name="../../arch/AX3292/mem/mem_s.S"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="mjpeg">
+      <File Name="../../arch/AX3292/mjpeg/jpeg.c"/>
+      <File Name="../../arch/AX3292/mjpeg/jpeg_table.c"/>
+      <File Name="../../arch/AX3292/mjpeg/mjpeg.c"/>
+      <File Name="../../arch/AX3292/mjpeg/mjpeg.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="sdc">
+      <File Name="../../arch/AX3292/sdc/sdc.c"/>
+      <File Name="../../arch/AX3292/sdc/sdc.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="spi">
+      <File Name="../../arch/AX3292/spi/spi0.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="startup">
+      <File Name="../../arch/AX3292/startup/BLDR.h"/>
+      <File Name="../../arch/AX3292/startup/BLDRX32.S"/>
+      <File Name="../../arch/AX3292/startup/boost.S"/>
+      <File Name="../../arch/AX3292/startup/boot.S"/>
+      <File Name="../../arch/AX3292/startup/bootsecs.c"/>
+      <File Name="../../arch/AX3292/startup/DBR.S"/>
+      <File Name="../../arch/AX3292/startup/MBR.S"/>
+      <File Name="../../arch/AX3292/startup/vector.S"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="sys">
+      <File Name="../../arch/AX3292/sys/sys.c"/>
+      <File Name="../../arch/AX3292/sys/sys.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="timer">
+      <File Name="../../arch/AX3292/timer/timer0.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="uart">
+      <File Name="../../arch/AX3292/uart/uart0.c"/>
+      <File Name="../../arch/AX3292/uart/btuart.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="usb">
+      <File Name="../../arch/AX3292/usb/usb.c" ExcludeProjConfig=""/>
+      <File Name="../../arch/AX3292/usb/usb.h"/>
+      <File Name="../../arch/AX3292/usb/237a_1.c"/>
+      <File Name="../../arch/AX3292/usb/237a_2.c"/>
+      <File Name="../../arch/AX3292/usb/usb11.c"/>
+      <File Name="../../arch/AX3292/usb/jt525.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="watchdog">
+      <File Name="../../arch/AX3292/watchdog/watchdog.c"/>
+    </VirtualDirectory>
+    <File Name="../../arch/AX3292/ax329x.h"/>
+    <File Name="../../arch/AX3292/spr_ap32_defs.h"/>
+    <File Name="../../arch/AX3292/spr_defs.h"/>
+    <VirtualDirectory Name="ax32xx_rtc">
+      <File Name="../../arch/AX3292/ax32xx_rtc/ax32xx_rtc.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="dac">
+      <File Name="../../arch/AX3292/dac/ax32xx_dac.c"/>
+      <File Name="../../arch/AX3292/dac/ax32xx_dac.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="pwm">
+      <File Name="../../arch/AX3292/pwm/pwm.c"/>
+      <File Name="../../arch/AX3292/pwm/pwm.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="tminf">
+      <File Name="../../arch/AX3292/tminf/ax32xx_tminf.c"/>
+      <File Name="../../arch/AX3292/tminf/ax32xx_tminf.h"/>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <Description/>
+  <Dependencies/>
+  <Settings Type="Static Library">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="ap32" DebuggerType="GNU gdb debugger" Type="Static Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g;-Os;-Wall" C_Options="-g;-Os;-Wall;-mhard-div;-ffunction-sections;-fdata-sections" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="../../inc"/>
+        <IncludePath Value="../../arch/AX3292"/>
+        <IncludePath Value="../../arch/AX3292/inc"/>
+        <IncludePath Value="../../os/freeRTOS/ports/AX3292"/>
+        <IncludePath Value="../../sys/drv"/>
+        <IncludePath Value="../../sys"/>
+        <IncludePath Value="../../lib"/>
+        <IncludePath Value="../../lib/drv"/>
+        <IncludePath Value="../../os/freeRTOS/inc"/>
+        <IncludePath Value="../../os/freeRTOS/osal"/>
+        <IncludePath Value="../../os/freeRTOS/ports/AX3292"/>
+        <IncludePath Value="../../arch/AX3292/hal/inc/"/>
+        <IncludePath Value="../../arch/AX3292/ax32xx/inc"/>
+        <IncludePath Value="../../board/AX3292/mvl8801"/>
+      </Compiler>
+      <Linker Options="-O0" Required="yes">
+        <LibraryPath Value="."/>
+        <LibraryPath Value="Debug"/>
+      </Linker>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="../lib$(ProjectName).a" IntermediateDirectory="./Debug" Command="./$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+  <Dependencies Name="Debug"/>
+</CodeLite_Project>

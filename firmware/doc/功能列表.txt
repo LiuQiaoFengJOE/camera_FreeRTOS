@@ -1,0 +1,7 @@
+   1 : 將SPI Flash組織成FAT32的文件系統格式
+   2 : FAT32啟動支持模塊結構為：DBR/MBR/BootBSP/BootFAT32
+   3 : lzo unzip引擎
+   4 : boost引擎
+
+
+

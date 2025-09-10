@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Project Name="AX3292-sys-sv6158" Version="10.0.0" InternalType="">
+  <Plugins>
+    <Plugin Name="qmake">
+      <![CDATA[00010001N0005Debug000000000000]]>
+    </Plugin>
+    <Plugin Name="CMakePlugin">
+      <![CDATA[[{
+  "name": "Debug",
+  "enabled": false,
+  "buildDirectory": "build",
+  "sourceDirectory": "$(ProjectPath)",
+  "generator": "",
+  "buildType": "",
+  "arguments": [],
+  "parentProject": ""
+ }]]]>
+    </Plugin>
+  </Plugins>
+  <VirtualDirectory Name="drv">
+    <VirtualDirectory Name="csi">
+      <File Name="../../sys/drv/csi/ax32xx_csi.h"/>
+      <File Name="../../sys/drv/csi/common.c"/>
+      <File Name="../../sys/drv/csi/csiScale0.c"/>
+      <File Name="../../sys/drv/csi/csiScale1.c"/>
+      <File Name="../../sys/drv/csi/hal_csi.h"/>
+      <File Name="../../sys/drv/csi/csiScaleuvc.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="dac">
+      <File Name="../../sys/drv/dac/dac.c"/>
+      <File Name="../../sys/drv/dac/dac.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="freeRTOS">
+      <File Name="../../sys/drv/freeRTOS/timer.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="i2c">
+      <File Name="../../sys/drv/i2c/i2c.c"/>
+      <File Name="../../sys/drv/i2c/i2c.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="isp">
+      <File Name="../../sys/drv/isp/ax32xx_isp.h"/>
+      <File Name="../../sys/drv/isp/hal_isp.c"/>
+      <File Name="../../sys/drv/isp/hal_isp.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="lcd">
+      <File Name="../../sys/drv/lcd/lcdb.c"/>
+      <File Name="../../sys/drv/lcd/lcddev.c"/>
+      <File Name="../../sys/drv/lcd/lcdframe.c"/>
+      <File Name="../../sys/drv/lcd/lcdframe.h"/>
+      <File Name="../../sys/drv/lcd/lcdrotate.c"/>
+      <File Name="../../sys/drv/lcd/lcdrotate.h"/>
+      <File Name="../../sys/drv/lcd/lcdstruct.h"/>
+      <File Name="../../sys/drv/lcd/picCombine.c"/>
+      <File Name="../../sys/drv/lcd/uiDraw.c"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="rtc">
+      <File Name="../../sys/drv/rtc/rtc.c"/>
+      <File Name="../../sys/drv/rtc/rtc.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="sensor">
+      <File Name="../../sys/drv/sensor/cmos_sensor.c"/>
+      <File Name="../../sys/drv/sensor/cmos_sensor.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="usbHost">
+      <File Name="../../sys/drv/usb_host/usensor.c"/>
+      <File Name="../../sys/drv/usb_host/usensor.h"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="usb_dev">
+      <File Name="../../sys/drv/usb_dev/hal_usb_api.c"/>
+      <File Name="../../sys/drv/usb_dev/hal_usb_api.h"/>
+      <File Name="../../sys/drv/usb_dev/hal_usb_dev_enum.c"/>
+      <File Name="../../sys/drv/usb_dev/hal_usb_dev_enum.h"/>
+      <File Name="../../sys/drv/usb_dev/hal_usb_msc.c"/>
+      <File Name="../../sys/drv/usb_dev/hal_usb_msc.h"/>
+      <File Name="../../sys/drv/usb_dev/hal_usb_uac.c"/>
+      <File Name="../../sys/drv/usb_dev/hal_usb_uac.h"/>
+      <File Name="../../sys/drv/usb_dev/hal_usb_uvc.c"/>
+      <File Name="../../sys/drv/usb_dev/hal_usb_uvc.h"/>
+      <File Name="../../sys/drv/usb_dev/usb_dev.c"/>
+      <File Name="../../sys/drv/usb_dev/usb_dev.h"/>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <Description/>
+  <Dependencies/>
+  <VirtualDirectory Name="auadc">
+    <File Name="../../sys/auadc/auadc.c"/>
+    <File Name="../../sys/auadc/auadc.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="cjson">
+    <File Name="../../sys/cjson/cJSON.c"/>
+    <File Name="../../sys/cjson/cJSON.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="config">
+    <File Name="../../sys/config/conf_parse.c"/>
+    <File Name="../../sys/config/conf_parse.h"/>
+    <File Name="../../sys/config/conf_scan.c"/>
+    <File Name="../../sys/config/flexint.h"/>
+    <File Name="../../sys/config/scan.c"/>
+    <File Name="../../sys/config/scan1.c"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="eloop">
+    <File Name="../../sys/eloop/eloop.c"/>
+    <File Name="../../sys/eloop/eloop.h"/>
+    <File Name="../../sys/eloop/irqTimer.c"/>
+    <File Name="../../sys/eloop/irqTimer.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="eventTimer">
+    <File Name="../../sys/eventTimer/eventTimer.c"/>
+    <File Name="../../sys/eventTimer/eventTimer.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="fly">
+    <File Name="../../sys/fly/fly.c"/>
+    <File Name="../../sys/fly/fly.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="ftp">
+    <File Name="../../sys/ftp/ftp-fs.c"/>
+    <File Name="../../sys/ftp/ftp-fs.h"/>
+    <File Name="../../sys/ftp/ftp.c"/>
+    <File Name="../../sys/ftp/ftp.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="hal_watermark">
+    <File Name="../../sys/hal_watermark/ascii.c"/>
+    <File Name="../../sys/hal_watermark/ascii.h"/>
+    <File Name="../../sys/hal_watermark/ascii_default.c"/>
+    <File Name="../../sys/hal_watermark/ascii_default.h"/>
+    <File Name="../../sys/hal_watermark/ascii_default_draw.c"/>
+    <File Name="../../sys/hal_watermark/ascii_num2.c"/>
+    <File Name="../../sys/hal_watermark/ascii_num2.h"/>
+    <File Name="../../sys/hal_watermark/ascii_num2_draw.c"/>
+    <File Name="../../sys/hal_watermark/ascii_num3.c"/>
+    <File Name="../../sys/hal_watermark/ascii_num3.h"/>
+    <File Name="../../sys/hal_watermark/ascii_num3_draw.c"/>
+    <File Name="../../sys/hal_watermark/ascii_num4.c"/>
+    <File Name="../../sys/hal_watermark/ascii_num4.h"/>
+    <File Name="../../sys/hal_watermark/ascii_num4_draw.c"/>
+    <File Name="../../sys/hal_watermark/ascii_num5.c"/>
+    <File Name="../../sys/hal_watermark/ascii_num5.h"/>
+    <File Name="../../sys/hal_watermark/ascii_num5_draw.c"/>
+    <File Name="../../sys/hal_watermark/hal_watermark.c"/>
+    <File Name="../../sys/hal_watermark/hal_watermark.h"/>
+    <File Name="../../sys/hal_watermark/watermark_stream.c"/>
+    <File Name="../../sys/hal_watermark/watermark_stream.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="http">
+    <File Name="../../sys/http/http.c"/>
+    <File Name="../../sys/http/http.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="mac_fd">
+    <File Name="../../sys/mac_fd/mac_fd.c"/>
+    <File Name="../../sys/mac_fd/mac_fd.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="mediaFile">
+    <File Name="../../sys/mediaFile/playVideo.c"/>
+    <File Name="../../sys/mediaFile/record.c"/>
+    <File Name="../../sys/mediaFile/playNet.c"/>
+    <File Name="../../sys/mediaFile/readFile.c"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="printf">
+    <File Name="../../sys/printf/printf.c"/>
+    <File Name="../../sys/printf/vsprintf.c"/>
+    <File Name="../../sys/printf/vsscanf.c"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="resfs">
+    <File Name="../../sys/resfs/resfs.c"/>
+    <File Name="../../sys/resfs/sys-id-.h"/>
+    <File Name="../../sys/resfs/sys-id.h"/>
+    <File Name="../../sys/resfs/sysid-.h"/>
+    <File Name="../../sys/resfs/sysid.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="rtp-media">
+    <File Name="../../sys/rtp-media/jpeg.h"/>
+    <File Name="../../sys/rtp-media/rtp-audio.c"/>
+    <File Name="../../sys/rtp-media/rtp-jpeg.c"/>
+    <File Name="../../sys/rtp-media/rtp-user-jpeg.c"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="sUI">
+    <File Name="../../sys/sUI/button.c"/>
+    <File Name="../../sys/sUI/button.h"/>
+    <File Name="../../sys/sUI/debug.h"/>
+    <File Name="../../sys/sUI/dialog.c"/>
+    <File Name="../../sys/sUI/dialog.h"/>
+    <File Name="../../sys/sUI/frameWin.c"/>
+    <File Name="../../sys/sUI/frameWin.h"/>
+    <File Name="../../sys/sUI/imageIcon.c"/>
+    <File Name="../../sys/sUI/imageIcon.h"/>
+    <File Name="../../sys/sUI/itemManage.c"/>
+    <File Name="../../sys/sUI/itemManage.h"/>
+    <File Name="../../sys/sUI/memPool.c"/>
+    <File Name="../../sys/sUI/memPool.h"/>
+    <File Name="../../sys/sUI/menuItem.c"/>
+    <File Name="../../sys/sUI/menuItem.h"/>
+    <File Name="../../sys/sUI/menuItemEx.c"/>
+    <File Name="../../sys/sUI/menuItemEx.h"/>
+    <File Name="../../sys/sUI/menuOption.c"/>
+    <File Name="../../sys/sUI/menuOption.h"/>
+    <File Name="../../sys/sUI/mType.h"/>
+    <File Name="../../sys/sUI/progressBar.c"/>
+    <File Name="../../sys/sUI/progressBar.h"/>
+    <File Name="../../sys/sUI/rect.c"/>
+    <File Name="../../sys/sUI/rect.h"/>
+    <File Name="../../sys/sUI/stringIcon.c"/>
+    <File Name="../../sys/sUI/stringIcon.h"/>
+    <File Name="../../sys/sUI/sUI.h"/>
+    <File Name="../../sys/sUI/tips.c"/>
+    <File Name="../../sys/sUI/tips.h"/>
+    <File Name="../../sys/sUI/uiAlloc.c"/>
+    <File Name="../../sys/sUI/uiAlloc.h"/>
+    <File Name="../../sys/sUI/userDef.h"/>
+    <File Name="../../sys/sUI/widget.c"/>
+    <File Name="../../sys/sUI/widget.h"/>
+    <File Name="../../sys/sUI/widgetManage.c"/>
+    <File Name="../../sys/sUI/widgetManage.h"/>
+    <File Name="../../sys/sUI/winManage.c"/>
+    <File Name="../../sys/sUI/winManage.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="spi">
+    <File Name="../../sys/spi/spi.c"/>
+    <File Name="../../sys/spi/spi.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="streamMalloc">
+    <File Name="../../sys/streamMalloc/stream_malloc.c"/>
+    <File Name="../../sys/streamMalloc/stream_malloc.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="sysCommon">
+    <File Name="../../sys/sysCommon/commonInclude.h"/>
+    <File Name="../../sys/sysCommon/sysCommonEnum.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="systemSetting">
+    <File Name="../../sys/systemSetting/sysCommon.h"/>
+    <File Name="../../sys/systemSetting/systemSetting.c"/>
+    <File Name="../../sys/systemSetting/systemSetting.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="tcpControl">
+    <File Name="../../sys/tcpControl/setJSON.c"/>
+    <File Name="../../sys/tcpControl/setJSON.h"/>
+    <File Name="../../sys/tcpControl/tcpControl.c"/>
+    <File Name="../../sys/tcpControl/tcpControl.h"/>
+    <File Name="../../sys/tcpControl/tcpMessage.c"/>
+    <File Name="../../sys/tcpControl/tcpMessage.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="tcphlpr">
+    <File Name="../../sys/tcphlpr/pmsg.c"/>
+    <File Name="../../sys/tcphlpr/pmsg.h"/>
+    <File Name="../../sys/tcphlpr/tcphlpr.c"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="udhcp-0.9.8">
+    <File Name="../../sys/udhcp-0.9.8/clientpacket.h"/>
+    <File Name="../../sys/udhcp-0.9.8/dhcpc.h"/>
+    <File Name="../../sys/udhcp-0.9.8/dhcpd.c"/>
+    <File Name="../../sys/udhcp-0.9.8/dhcpd.h"/>
+    <File Name="../../sys/udhcp-0.9.8/dhcp_debug.h"/>
+    <File Name="../../sys/udhcp-0.9.8/leases.c"/>
+    <File Name="../../sys/udhcp-0.9.8/leases.h"/>
+    <File Name="../../sys/udhcp-0.9.8/libbb_udhcp.h"/>
+    <File Name="../../sys/udhcp-0.9.8/options.c"/>
+    <File Name="../../sys/udhcp-0.9.8/options.h"/>
+    <File Name="../../sys/udhcp-0.9.8/packet.c"/>
+    <File Name="../../sys/udhcp-0.9.8/packet.h"/>
+    <File Name="../../sys/udhcp-0.9.8/serverpacket.c"/>
+    <File Name="../../sys/udhcp-0.9.8/serverpacket.h"/>
+    <File Name="../../sys/udhcp-0.9.8/socket.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="udptest">
+    <File Name="../../sys/udptest/udptest.c"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="uthash">
+    <File Name="../../sys/uthash/utarray.h"/>
+    <File Name="../../sys/uthash/uthash.h"/>
+    <File Name="../../sys/uthash/utlist.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="fatfs">
+    <File Name="../../sys/fatfs/fileManage.c"/>
+    <File Name="../../sys/fatfs/fileOps.c"/>
+    <File Name="../../sys/fatfs/fileOps.h"/>
+  </VirtualDirectory>
+  <VirtualDirectory Name="appcmd">
+    <File Name="../../sys/appcmd/socket_cmd.c"/>
+    <File Name="../../sys/appcmd/socket_cmd.h"/>
+    <File Name="../../sys/appcmd/socket_cmdEx.c"/>
+    <File Name="../../sys/appcmd/socket_cmd_wifi.c"/>
+    <File Name="../../sys/appcmd/socket_cmd_wifi.h"/>
+  </VirtualDirectory>
+  <Dependencies Name="Debug"/>
+  <VirtualDirectory Name="printer">
+    <File Name="../../sys/printer/printer.c"/>
+    <File Name="../../sys/printer/printerpic.c"/>
+  </VirtualDirectory>
+  <Settings Type="Static Library">
+    <GlobalSettings>
+      <Compiler Options="" C_Options="" Assembler="">
+        <IncludePath Value="."/>
+      </Compiler>
+      <Linker Options="">
+        <LibraryPath Value="."/>
+      </Linker>
+      <ResourceCompiler Options=""/>
+    </GlobalSettings>
+    <Configuration Name="Debug" CompilerType="ap32" DebuggerType="GNU gdb debugger" Type="Static Library" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
+      <Compiler Options="-g;-Os;-Wall" C_Options="-g;-Os;-Wall;-mhard-div;-ffunction-sections;-fdata-sections;-lm" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
+        <IncludePath Value="../../lib"/>
+        <IncludePath Value="../../lib/drv"/>
+        <IncludePath Value="../../sys"/>
+        <IncludePath Value="../../inc"/>
+        <IncludePath Value="../../net/ssv6158/host/include"/>
+        <IncludePath Value="../../net/ssv6158/host/include/priv"/>
+        <IncludePath Value="../../net/ssv6158/host/include/priv/hw"/>
+        <IncludePath Value="../../net/ssv6158/host/netstack_wrapper/icomm_lwIP"/>
+        <IncludePath Value="../../net/ssv6158/host/os_wrapper/FreeRTOS"/>
+        <IncludePath Value="../../net/ssv6158/host/platform/jianrong"/>
+        <IncludePath Value="../../net/ssv6158/host/tcpip/lwip-1.4.0/src"/>
+        <IncludePath Value="../../net/ssv6158/host/tcpip/lwip-1.4.0/src/arch/"/>
+        <IncludePath Value="../../net/ssv6158/host/tcpip/lwip-1.4.0/src/include/"/>
+        <IncludePath Value="../../net/ssv6158/host/tcpip/lwip-1.4.0/src/include/ipv4"/>
+        <IncludePath Value="../../net/ssv6158/host/tcpip/lwip-1.4.0/src/include/ipv6"/>
+        <IncludePath Value="../../net/ssv6158/host/tcpip/lwip-1.4.0/ports/icomm"/>
+        <IncludePath Value="../../net/ssv6158/host/tcpip/lwip-1.4.0/ports/icomm/include"/>
+        <IncludePath Value="../../net/ssv6158/host/tcpip/lwip-1.4.0/ports/icomm/include/arch"/>
+        <IncludePath Value="../../os/lwip/ports/AX3292"/>
+        <IncludePath Value="../../os/freeRTOS/inc"/>
+        <IncludePath Value="../../os/freeRTOS/osal"/>
+        <IncludePath Value="../../os/freeRTOS/ports/AX3292"/>
+        <IncludePath Value="../../arch/AX3292"/>
+        <IncludePath Value="../../arch/"/>
+        <IncludePath Value="../../arch/AX3292/hal/inc"/>
+        <IncludePath Value="../../arch/AX3292/ax32xx/inc"/>
+        <IncludePath Value="../../sys/drv"/>
+        <IncludePath Value="../../board/AX3292/mvl8801"/>
+        <IncludePath Value="../../demo/helloftv"/>
+        <IncludePath Value="../../demo/helloftv/res"/>
+        <IncludePath Value="../../arch/AX3292/inc/asm"/>
+        <Preprocessor Value="DEBUG="/>
+      </Compiler>
+      <Linker Options="" Required="yes"/>
+      <ResourceCompiler Options="" Required="no"/>
+      <General OutputFile="../lib$(ProjectName).a" IntermediateDirectory="./Debug" Command="" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
+        <![CDATA[]]>
+      </Environment>
+      <Debugger IsRemote="no" RemoteHostName="" RemoteHostPort="" DebuggerPath="" IsExtended="no">
+        <DebuggerSearchPaths/>
+        <PostConnectCommands/>
+        <StartupCommands/>
+      </Debugger>
+      <PreBuild/>
+      <PostBuild/>
+      <CustomBuild Enabled="no">
+        <RebuildCommand/>
+        <CleanCommand/>
+        <BuildCommand/>
+        <PreprocessFileCommand/>
+        <SingleFileCommand/>
+        <MakefileGenerationCommand/>
+        <ThirdPartyToolName/>
+        <WorkingDirectory/>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild/>
+        <CustomPreBuild/>
+      </AdditionalRules>
+      <Completion EnableCpp11="no" EnableCpp14="no">
+        <ClangCmpFlagsC/>
+        <ClangCmpFlags/>
+        <ClangPP/>
+        <SearchPaths/>
+      </Completion>
+    </Configuration>
+  </Settings>
+  <VirtualDirectory Name="unifont">
+    <File Name="../../sys/unifont/ebook.h"/>
+    <File Name="../../sys/unifont/ebook_font.c"/>
+    <File Name="../../sys/unifont/ebook_font.h"/>
+    <File Name="../../sys/unifont/ebook_port.c"/>
+    <File Name="../../sys/unifont/ebook_type.h"/>
+  </VirtualDirectory>
+</CodeLite_Project>
